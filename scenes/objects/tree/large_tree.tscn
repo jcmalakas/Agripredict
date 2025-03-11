@@ -1,0 +1,52 @@
+[gd_scene load_steps=11 format=3 uid="uid://esu0mrhyyy1a"]
+
+[ext_resource type="Texture2D" uid="uid://docbfhf44d2ea" path="res://assets/game/Objects/Basic_Grass_Biom_things.png" id="1_4n36s"]
+[ext_resource type="Shader" path="res://scenes/objects/tree/tree_shake.gdshader" id="1_axwey"]
+[ext_resource type="PackedScene" uid="uid://4xcv1d1hnupj" path="res://scenes/components/hurt_components.tscn" id="2_8hjk1"]
+[ext_resource type="Script" path="res://scenes/objects/tree/large_tree.gd" id="2_uibo4"]
+[ext_resource type="PackedScene" uid="uid://3kil6crjm2j1" path="res://scenes/components/damage_component.tscn" id="3_ofiwu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wrm2c"]
+resource_local_to_scene = true
+shader = ExtResource("1_axwey")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1q3tq"]
+atlas = ExtResource("1_4n36s")
+region = Rect2(16, 0, 32, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a8gps"]
+radius = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yff22"]
+shader = ExtResource("1_axwey")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8tklv"]
+size = Vector2(17, 24)
+
+[node name="large_tree" type="Sprite2D"]
+material = SubResource("ShaderMaterial_wrm2c")
+position = Vector2(0, -12)
+texture = SubResource("AtlasTexture_1q3tq")
+script = ExtResource("2_uibo4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 9)
+shape = SubResource("CircleShape2D_a8gps")
+
+[node name="DamageComponent" parent="." instance=ExtResource("3_ofiwu")]
+max_damage = 3
+
+[node name="HurtComponent" parent="." instance=ExtResource("2_8hjk1")]
+material = SubResource("ShaderMaterial_yff22")
+tool = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_8tklv")
+debug_color = Color(0.760933, 0.339496, 0.759394, 0.42)

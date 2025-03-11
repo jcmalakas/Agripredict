@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1wsnip0sqo8j"]
+
+[ext_resource type="Theme" uid="uid://cvevndji4t07j" path="res://scenes/ui/game_ui_theme.tres" id="1_7y5cb"]
+[ext_resource type="Texture2D" uid="uid://bhntucgr6ee15" path="res://assets/game/Objects/Basic_Plants.png" id="2_7pka2"]
+[ext_resource type="Script" path="res://scenes/ui/inventory_panel.gd" id="2_a5m8x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugwpx"]
+atlas = ExtResource("2_7pka2")
+region = Rect2(80, 0, 16, 16)
+
+[node name="InventoryPanel" type="PanelContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_7y5cb")
+theme_type_variation = &"DarkWoodPanel"
+script = ExtResource("2_a5m8x")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Wheat" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(26, 32)
+layout_mode = 2
+theme_type_variation = &"InventoryItemPanel"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Wheat"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_ugwpx")
+
+[node name="WheatLabel" type="Label" parent="MarginContainer/VBoxContainer/Wheat"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_type_variation = &"InventoryLabel"
+text = "0"
