@@ -28,6 +28,7 @@ shader_parameter/shake_speed = 20.0
 size = Vector2(8, 21)
 
 [node name="SmallTree" type="Sprite2D"]
+y_sort_enabled = true
 material = SubResource("ShaderMaterial_mda52")
 position = Vector2(0, -11)
 texture = SubResource("AtlasTexture_nqxvf")
