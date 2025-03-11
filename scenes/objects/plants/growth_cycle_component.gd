@@ -12,16 +12,17 @@ var is_watered: bool
 var starting_day: int
 var current_day: int
 
+#the day and night cycle will always communicating with the growth component
 func _ready() -> void:
 	DayAndNightCycleManager.time_tick_day.connect(on_time_tick_day)
 
-
+#this function use kapag na water na yong plant don na papasok si growth_state
 func on_time_tick_day(day: int) -> void:
 	if is_watered:
 		if starting_day == 0:
 			starting_day = day
 		
-		growth_states(starting_day, day)#in growth states here 
+		growth_states(starting_day, day)#in growth states here is the stary of growing
 		harvest_state(starting_day, day)#after the growth state the wheat scene will pup up the you can collect it
 
 
