@@ -1,13 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bq0jejfnuyhmj"]
+[gd_scene load_steps=9 format=3 uid="uid://bq0jejfnuyhmj"]
 
 [ext_resource type="Theme" uid="uid://cvevndji4t07j" path="res://scenes/ui/game_ui_theme.tres" id="1_b8pwl"]
 [ext_resource type="Script" path="res://scenes/ui/tools_panel.gd" id="2_btni8"]
-[ext_resource type="Texture2D" uid="uid://ddgbfshlkdk5e" path="res://assets/game/Objects/Basic_tools_and_meterials.png" id="2_yo3ih"]
 [ext_resource type="Texture2D" uid="uid://bhntucgr6ee15" path="res://assets/game/Objects/Basic_Plants.png" id="3_8nx4v"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gjjf4"]
-atlas = ExtResource("2_yo3ih")
-region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cce3b"]
 load_path = "res://.godot/imported/Basic_tools_and_meterials.png-dfe355595628e7d1e014c19e0016442b.ctex"
@@ -44,13 +39,6 @@ theme_override_constants/margin_bottom = 4
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="ToolAxe" type="Button" parent="MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(26, 26)
-layout_mode = 2
-theme_type_variation = &"ToolButton"
-icon = SubResource("AtlasTexture_gjjf4")
-icon_alignment = 1
-
 [node name="ToolTilling" type="Button" parent="MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(26, 26)
 layout_mode = 2
@@ -72,7 +60,6 @@ theme_type_variation = &"ToolButton"
 icon = SubResource("AtlasTexture_xn2rp")
 icon_alignment = 1
 
-[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolAxe" to="." method="_on_tool_axe_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolTilling" to="." method="_on_tool_tilling_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolWateringCan" to="." method="_on_tool_watering_can_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolCorn" to="." method="_on_tool_corn_pressed"]
