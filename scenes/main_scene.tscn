@@ -8,7 +8,6 @@
 [node name="MainScene" type="Node"]
 
 [node name="DayNightCycleComponent" parent="." instance=ExtResource("1_6y6de")]
-visible = false
 
 [node name="GameRoot" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -19,6 +18,15 @@ y_sort_enabled = true
 [node name="Level1" parent="GameRoot/LevelRoot" instance=ExtResource("2_5tgxb")]
 
 [node name="player" parent="GameRoot" instance=ExtResource("3_sa2xo")]
-position = Vector2(268, 193)
+position = Vector2(380, 177)
+
+[node name="Camera2D" parent="GameRoot/player" index="4"]
+limit_left = -1
+limit_top = 1
+limit_right = 816
+limit_bottom = 480
+editor_draw_limits = true
 
 [node name="GameScreen" parent="." instance=ExtResource("3_2xs5o")]
+
+[editable path="GameRoot/player"]
