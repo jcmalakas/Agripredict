@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cubk2my5b7na1"]
 
-[ext_resource type="Script" path="res://scenes/components/day_night_cycle_component.gd" id="1_u6eqc"]
+[ext_resource type="Script" uid="uid://dscm0x3d5yxse" path="res://scenes/components/day_night_cycle_component.gd" id="1_u6eqc"]
 
 [sub_resource type="Gradient" id="Gradient_sseni"]
 offsets = PackedFloat32Array(0.122302, 0.194245, 0.267986, 0.349476, 0.463351, 0.985866)

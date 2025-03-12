@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b3ti3bi0ohrvs"]
 
 [ext_resource type="Theme" uid="uid://cvevndji4t07j" path="res://scenes/ui/game_ui_theme.tres" id="1_ka68l"]
-[ext_resource type="Script" path="res://scenes/ui/day_and_night_panel.gd" id="2_4g7f2"]
+[ext_resource type="Script" uid="uid://cjwqbvhrurmmc" path="res://scenes/ui/day_and_night_panel.gd" id="2_4g7f2"]
 [ext_resource type="Texture2D" uid="uid://b8e4mp6bhm7sb" path="res://assets/ui/basic_ui_sprites.png" id="2_k3imn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qm85m"]

@@ -18,6 +18,8 @@ signal game_time(time: float)
 signal time_tick(day: int, hour: int, minute: int)
 signal time_tick_day(day: int)
 
+var rain = false
+
 func _ready() -> void:
 	set_initial_time()
 
@@ -47,6 +49,15 @@ func recalculate_time() -> void:
 		time_tick.emit(day, hour, minute)
 	
 	if current_day != day:
+		var rng =  RandomNumberGenerator.new()
+		rng.randomize()
+		var rainChance = rng.randi_range(0,100)
+		
+		if rainChance > 60:
+			rain = true
+		else:
+			rain = false
+		
 		current_day = day
 		time_tick_day.emit(day)
 	

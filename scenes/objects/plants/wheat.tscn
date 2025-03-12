@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://b4bqlw3pudxg3"]
 
-[ext_resource type="Script" path="res://scenes/objects/plants/wheat.gd" id="1_iuffh"]
+[ext_resource type="Script" uid="uid://c16qgny5fssdo" path="res://scenes/objects/plants/wheat.gd" id="1_iuffh"]
 [ext_resource type="Texture2D" uid="uid://bhntucgr6ee15" path="res://assets/game/Objects/Basic_Plants.png" id="1_mkyvc"]
 [ext_resource type="PackedScene" uid="uid://4xcv1d1hnupj" path="res://scenes/components/hurt_components.tscn" id="2_7cxlh"]
 [ext_resource type="PackedScene" uid="uid://fqhvu2ybf8my" path="res://scenes/objects/plants/flowering_particles.tscn" id="3_4a6si"]

@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://tquwk0xon4o3" path="res://scenes/character/player/player.tscn" id="2_04y6a"]
 [ext_resource type="PackedScene" uid="uid://bxpsrxnlw3pjc" path="res://scenes/components/field_cursor_component.tscn" id="3_k58a2"]
 [ext_resource type="PackedScene" uid="uid://du5lrbo1q403s" path="res://scenes/ui/game_screen.tscn" id="3_piwxh"]
-[ext_resource type="Script" path="res://scenes/components/field_cursor_component.gd" id="4_e0j0t"]
+[ext_resource type="Script" uid="uid://bd1xyx1gmmbu2" path="res://scenes/components/field_cursor_component.gd" id="4_e0j0t"]
 [ext_resource type="PackedScene" uid="uid://ktcsb0hhyktx" path="res://scenes/components/crops_cursor_component.tscn" id="5_ds5sn"]
-[ext_resource type="Script" path="res://scenes/components/crops_cursor_component.gd" id="6_ayd25"]
+[ext_resource type="Script" uid="uid://co8l4cnysufd8" path="res://scenes/components/crops_cursor_component.gd" id="6_ayd25"]
 
 [node name="TestSceneCropFieldsTilledDirt" type="Node2D"]
 

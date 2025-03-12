@@ -3,10 +3,10 @@
 [ext_resource type="TileSet" uid="uid://bv22lfvipjil6" path="res://tileSets/game_tile_set.tres" id="1_kolrv"]
 [ext_resource type="PackedScene" uid="uid://bq2ep8sbs8xvs" path="res://scenes/character/chicken/chicken.tscn" id="2_khn7k"]
 [ext_resource type="PackedScene" uid="uid://c8x2dx1p1simb" path="res://scenes/character/cow/cow.tscn" id="3_kmtmc"]
-[ext_resource type="Script" path="res://scenes/components/field_cursor_component.gd" id="4_2g6i5"]
+[ext_resource type="Script" uid="uid://bd1xyx1gmmbu2" path="res://scenes/components/field_cursor_component.gd" id="4_2g6i5"]
 [ext_resource type="PackedScene" uid="uid://ktcsb0hhyktx" path="res://scenes/components/crops_cursor_component.tscn" id="4_ktgx8"]
 [ext_resource type="PackedScene" uid="uid://bxpsrxnlw3pjc" path="res://scenes/components/field_cursor_component.tscn" id="5_hr83r"]
-[ext_resource type="Script" path="res://scenes/components/crops_cursor_component.gd" id="6_jyesy"]
+[ext_resource type="Script" uid="uid://co8l4cnysufd8" path="res://scenes/components/crops_cursor_component.gd" id="6_jyesy"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_7xc00"]
 vertices = PackedVector2Array(664.703, 402.594, 616.859, 404.578, 615.867, 327, 602, 310.93, 727, 310.063, 727, 436.117, 602, 327, 665.711, 436.867)

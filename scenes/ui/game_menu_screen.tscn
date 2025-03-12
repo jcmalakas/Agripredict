@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bfsbobqoansaw"]
 
 [ext_resource type="PackedScene" uid="uid://q0chvlgo0nsh" path="res://scenes/test/GameMenuScreenBackground.tscn" id="1_60hll"]
-[ext_resource type="Script" path="res://scenes/ui/game_menu_screen.gd" id="1_hi2d0"]
+[ext_resource type="Script" uid="uid://bku5lx70nldp5" path="res://scenes/ui/game_menu_screen.gd" id="1_hi2d0"]
 [ext_resource type="Theme" uid="uid://cvevndji4t07j" path="res://scenes/ui/game_ui_theme.tres" id="1_t5emp"]
 
 [sub_resource type="SystemFont" id="SystemFont_y4eyr"]

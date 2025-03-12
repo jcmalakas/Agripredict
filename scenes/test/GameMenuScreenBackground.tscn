@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=4 uid="uid://q0chvlgo0nsh"]
 
 [ext_resource type="PackedScene" uid="uid://cubk2my5b7na1" path="res://scenes/components/day_night_cycle_component.tscn" id="1_r8a13"]
-[ext_resource type="Script" path="res://scenes/test/game_menu_screen_background.gd" id="1_suad6"]
+[ext_resource type="Script" uid="uid://dyqyms334j85w" path="res://scenes/test/game_menu_screen_background.gd" id="1_suad6"]
 [ext_resource type="TileSet" uid="uid://bv22lfvipjil6" path="res://tileSets/game_tile_set.tres" id="2_o5mw1"]
 [ext_resource type="PackedScene" uid="uid://bq2ep8sbs8xvs" path="res://scenes/character/chicken/chicken.tscn" id="9_w83j6"]
 [ext_resource type="PackedScene" uid="uid://d281i1fuvhjk8" path="res://scenes/character/player/player_display.tscn" id="10_hycpd"]

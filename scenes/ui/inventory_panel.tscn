@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://cvevndji4t07j" path="res://scenes/ui/game_ui_theme.tres" id="1_7y5cb"]
 [ext_resource type="Texture2D" uid="uid://bhntucgr6ee15" path="res://assets/game/Objects/Basic_Plants.png" id="2_7pka2"]
-[ext_resource type="Script" path="res://scenes/ui/inventory_panel.gd" id="2_a5m8x"]
+[ext_resource type="Script" uid="uid://bmnvgcg17v6t7" path="res://scenes/ui/inventory_panel.gd" id="2_a5m8x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ugwpx"]
 atlas = ExtResource("2_7pka2")

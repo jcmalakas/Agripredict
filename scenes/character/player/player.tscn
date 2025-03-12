@@ -1,14 +1,14 @@
-[gd_scene load_steps=54 format=3 uid="uid://tquwk0xon4o3"]
+[gd_scene load_steps=61 format=3 uid="uid://tquwk0xon4o3"]
 
-[ext_resource type="Script" path="res://scenes/character/player/player.gd" id="1_jwjvm"]
+[ext_resource type="Script" uid="uid://t0jo0cd3hno3" path="res://scenes/character/player/player.gd" id="1_jwjvm"]
 [ext_resource type="Texture2D" uid="uid://dybwn221yh3ck" path="res://assets/game/Characters/Basic Charakter Actions.png" id="1_xpw0x"]
 [ext_resource type="Texture2D" uid="uid://chhvrvex43oce" path="res://assets/game/Characters/Basic Charakter Spritesheet.png" id="2_vk3dq"]
-[ext_resource type="Script" path="res://scripts/state_machines/node_state_machine.gd" id="3_bppwt"]
-[ext_resource type="Script" path="res://scenes/character/player/idle_state.gd" id="4_cumrk"]
-[ext_resource type="Script" path="res://scenes/character/player/walk_state.gd" id="5_mhafc"]
-[ext_resource type="Script" path="res://scenes/character/player/chopping_state.gd" id="7_tcoks"]
-[ext_resource type="Script" path="res://scenes/character/player/tilling_state.gd" id="8_g5y4b"]
-[ext_resource type="Script" path="res://scenes/character/player/watering_state.gd" id="9_h8x2x"]
+[ext_resource type="Script" uid="uid://bkth3clfyp684" path="res://scripts/state_machines/node_state_machine.gd" id="3_bppwt"]
+[ext_resource type="Script" uid="uid://d3b46t4qvbur3" path="res://scenes/character/player/idle_state.gd" id="4_cumrk"]
+[ext_resource type="Script" uid="uid://d205qvy40xu3m" path="res://scenes/character/player/walk_state.gd" id="5_mhafc"]
+[ext_resource type="Script" uid="uid://b7rsavny3ajki" path="res://scenes/character/player/chopping_state.gd" id="7_tcoks"]
+[ext_resource type="Script" uid="uid://c82dss3fcdsf1" path="res://scenes/character/player/tilling_state.gd" id="8_g5y4b"]
+[ext_resource type="Script" uid="uid://d6umo06jgb4b" path="res://scenes/character/player/watering_state.gd" id="9_h8x2x"]
 [ext_resource type="PackedScene" uid="uid://d24mo0dp5k2q" path="res://scenes/components/hit_component.tscn" id="10_23rtp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_da2eo"]
@@ -400,6 +400,43 @@ radius = 3.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_b1uwe"]
 radius = 3.0
 
+[sub_resource type="Curve" id="Curve_68dt2"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.735294, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_gubc5"]
+curve = SubResource("Curve_68dt2")
+
+[sub_resource type="Curve" id="Curve_in2if"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_m5h5h"]
+_limits = [0.0, 30.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.661765, 2.02247), 0.0, 0.0, 0, 0, Vector2(0.897059, 3.03371), 6.54896, 6.54896, 0, 0, Vector2(1, 7.75281), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_lcjji"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_c1pb6"]
+curve_x = SubResource("Curve_in2if")
+curve_y = SubResource("Curve_m5h5h")
+curve_z = SubResource("Curve_lcjji")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yuskr"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, -200, 0)
+emission_shape = 3
+emission_box_extents = Vector3(350, 1, 1)
+gravity = Vector3(0, 2500, 0)
+scale_min = 0.2
+scale_over_velocity_curve = SubResource("CurveXYZTexture_c1pb6")
+alpha_curve = SubResource("CurveTexture_gubc5")
+
 [node name="player" type="CharacterBody2D" groups=["player"]]
 y_sort_enabled = true
 collision_layer = 2
@@ -454,3 +491,12 @@ debug_color = Color(0.929265, 0.225519, 0.365746, 0.42)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
+
+[node name="rain" type="GPUParticles2D" parent="."]
+position = Vector2(2, 45)
+emitting = false
+amount = 500
+lifetime = 0.5
+preprocess = 0.5
+visibility_rect = Rect2(-350, -200, 700, 400)
+process_material = SubResource("ParticleProcessMaterial_yuskr")

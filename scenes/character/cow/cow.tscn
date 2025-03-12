@@ -1,10 +1,10 @@
 [gd_scene load_steps=13 format=3 uid="uid://c8x2dx1p1simb"]
 
-[ext_resource type="Script" path="res://scenes/character/cow/cow.gd" id="1_4ofvs"]
+[ext_resource type="Script" uid="uid://bvndg6f1l1egb" path="res://scenes/character/cow/cow.gd" id="1_4ofvs"]
 [ext_resource type="Texture2D" uid="uid://ccw6mlcp3rfq4" path="res://assets/game/Characters/Free Cow Sprites.png" id="1_b5dl2"]
-[ext_resource type="Script" path="res://scripts/state_machines/node_state_machine.gd" id="2_mlw15"]
-[ext_resource type="Script" path="res://scenes/character/npc_state/idle_state.gd" id="3_d4c5c"]
-[ext_resource type="Script" path="res://scenes/character/npc_state/walk_state.gd" id="4_h5vbb"]
+[ext_resource type="Script" uid="uid://bkth3clfyp684" path="res://scripts/state_machines/node_state_machine.gd" id="2_mlw15"]
+[ext_resource type="Script" uid="uid://c6qhkem6pdi7g" path="res://scenes/character/npc_state/idle_state.gd" id="3_d4c5c"]
+[ext_resource type="Script" uid="uid://d2i53k000lpcc" path="res://scenes/character/npc_state/walk_state.gd" id="4_h5vbb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a80bv"]
 atlas = ExtResource("1_b5dl2")
