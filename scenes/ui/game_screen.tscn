@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://du5lrbo1q403s"]
+[gd_scene load_steps=6 format=3 uid="uid://du5lrbo1q403s"]
 
 [ext_resource type="Theme" uid="uid://cvevndji4t07j" path="res://scenes/ui/game_ui_theme.tres" id="1_bv1rp"]
 [ext_resource type="PackedScene" uid="uid://bq0jejfnuyhmj" path="res://scenes/ui/tools_panel.tscn" id="2_7d8cf"]
 [ext_resource type="PackedScene" uid="uid://d1wsnip0sqo8j" path="res://scenes/ui/inventory_panel.tscn" id="3_nvde6"]
 [ext_resource type="PackedScene" uid="uid://b3ti3bi0ohrvs" path="res://scenes/ui/day_and_night_panel.tscn" id="4_rx2p7"]
+[ext_resource type="Script" uid="uid://depb6kf34qywj" path="res://scenes/ui/money_label.gd" id="5_0kkfd"]
 
 [node name="GameScreen" type="CanvasLayer"]
 
@@ -30,3 +31,9 @@ size_flags_vertical = 4
 [node name="DayAndNightPanel" parent="MarginContainer" instance=ExtResource("4_rx2p7")]
 layout_mode = 2
 size_flags_horizontal = 8
+
+[node name="moneyLabel" type="Label" parent="."]
+offset_right = 71.0
+offset_bottom = 22.3333
+text = "Money: 0"
+script = ExtResource("5_0kkfd")

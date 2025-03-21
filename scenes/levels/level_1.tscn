@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://bjq1qgbgdocbu"]
+[gd_scene load_steps=12 format=4 uid="uid://bjq1qgbgdocbu"]
 
 [ext_resource type="TileSet" uid="uid://bv22lfvipjil6" path="res://tileSets/game_tile_set.tres" id="1_kolrv"]
 [ext_resource type="PackedScene" uid="uid://bq2ep8sbs8xvs" path="res://scenes/character/chicken/chicken.tscn" id="2_khn7k"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://ktcsb0hhyktx" path="res://scenes/components/crops_cursor_component.tscn" id="4_ktgx8"]
 [ext_resource type="PackedScene" uid="uid://bxpsrxnlw3pjc" path="res://scenes/components/field_cursor_component.tscn" id="5_hr83r"]
 [ext_resource type="Script" uid="uid://co8l4cnysufd8" path="res://scenes/components/crops_cursor_component.gd" id="6_jyesy"]
+[ext_resource type="PackedScene" uid="uid://cr6abx2gpqgyn" path="res://scenes/objects/chest.tscn" id="8_s8va5"]
+[ext_resource type="PackedScene" uid="uid://dim7q467od071" path="res://scenes/objects/plants/wheat_harvest.tscn" id="9_dga24"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_7xc00"]
 vertices = PackedVector2Array(664.703, 402.594, 616.859, 404.578, 615.867, 327, 602, 310.93, 727, 310.063, 727, 436.117, 602, 327, 665.711, 436.867)
@@ -116,3 +118,30 @@ position = Vector2(676, 439)
 
 [node name="cow3" parent="cows" instance=ExtResource("3_kmtmc")]
 position = Vector2(709, 376)
+
+[node name="chest" parent="." instance=ExtResource("8_s8va5")]
+position = Vector2(454, 248)
+
+[node name="WheatHarvest" parent="." instance=ExtResource("9_dga24")]
+position = Vector2(403, 245)
+
+[node name="WheatHarvest2" parent="." instance=ExtResource("9_dga24")]
+position = Vector2(405, 255)
+
+[node name="WheatHarvest3" parent="." instance=ExtResource("9_dga24")]
+position = Vector2(406, 254)
+
+[node name="WheatHarvest4" parent="." instance=ExtResource("9_dga24")]
+position = Vector2(404, 263)
+
+[node name="WheatHarvest5" parent="." instance=ExtResource("9_dga24")]
+position = Vector2(406, 264)
+
+[node name="WheatHarvest6" parent="." instance=ExtResource("9_dga24")]
+position = Vector2(405, 260)
+
+[node name="WheatHarvest7" parent="." instance=ExtResource("9_dga24")]
+position = Vector2(408, 257)
+
+[node name="WheatHarvest8" parent="." instance=ExtResource("9_dga24")]
+position = Vector2(412, 258)

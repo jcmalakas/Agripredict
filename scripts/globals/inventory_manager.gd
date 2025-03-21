@@ -1,8 +1,8 @@
 extends Node
 
 #use for counting how many item you collect
-var inventory: Dictionary = Dictionary()
-
+var inventory: Dictionary = {"wheat" : 0}
+var money:float
 signal inventory_changed
 
 func add_collectable(collectable_name: String) -> void:

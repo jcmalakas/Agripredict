@@ -10,7 +10,10 @@ var wheat_harvest_scene = preload("res://scenes/objects/plants/wheat_harvest.tsc
 @onready var hurt_component: HurtComponent = $HurtComponent
 
 var growth_state: DataTypes.GrowthStates = DataTypes.GrowthStates.Seed 
-
+@export var destroyThreshold:int = 80
+var destroyChance
+var rng 
+var justRained:bool = false
 
 func _ready() -> void:
 	watering_particles.emitting = false
@@ -19,7 +22,11 @@ func _ready() -> void:
 	hurt_component.hurt.connect(on_hurt) #kapag nag water ka sa plant unang tatawagin is si on_hurt 
 	growth_cycle_component.crop_maturity.connect(on_crop_maturity) #this function connect to crop maturity 
 	growth_cycle_component.crop_harvesting.connect(on_crop_harvesting) #this function connect to harvesting
-
+	rng =  RandomNumberGenerator.new()
+	rng.randomize()
+	destroyChance = rng.randi_range(0,100)
+	print(destroyChance)
+	DayAndNightCycleManager.justRained.connect(rainSwitch)
 
 func _process(delta: float) -> void:
 	growth_state = growth_cycle_component.get_current_growth_state()
@@ -27,6 +34,23 @@ func _process(delta: float) -> void:
 	
 	if growth_state == DataTypes.GrowthStates.Maturity:
 		flowering_particles.emitting = true
+			
+	if DayAndNightCycleManager.rain and destroyChance > destroyThreshold:
+		print("Chance")
+		print(destroyChance)
+		print("Threshold")
+		print(destroyThreshold)
+		print(destroyChance > destroyThreshold)
+		queue_free()
+	if justRained:
+		destroyChance = rng.randi_range(0,100)
+		print("Chance")
+		print(destroyChance)
+		justRained = false
+	
+
+func rainSwitch() -> void:
+	justRained = true
 
 # here is the function of on_hurt component
 func on_hurt(hit_damage: int) -> void:

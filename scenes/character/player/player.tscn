@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://tquwk0xon4o3"]
+[gd_scene load_steps=62 format=3 uid="uid://tquwk0xon4o3"]
 
 [ext_resource type="Script" uid="uid://t0jo0cd3hno3" path="res://scenes/character/player/player.gd" id="1_jwjvm"]
 [ext_resource type="Texture2D" uid="uid://dybwn221yh3ck" path="res://assets/game/Characters/Basic Charakter Actions.png" id="1_xpw0x"]
@@ -437,6 +437,9 @@ scale_min = 0.2
 scale_over_velocity_curve = SubResource("CurveXYZTexture_c1pb6")
 alpha_curve = SubResource("CurveTexture_gubc5")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_68dt2"]
+radius = 17.0294
+
 [node name="player" type="CharacterBody2D" groups=["player"]]
 y_sort_enabled = true
 collision_layer = 2
@@ -500,3 +503,10 @@ lifetime = 0.5
 preprocess = 0.5
 visibility_rect = Rect2(-350, -200, 700, 400)
 process_material = SubResource("ParticleProcessMaterial_yuskr")
+
+[node name="detectionComponent" type="Area2D" parent="." groups=["player"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detectionComponent"]
+position = Vector2(0, -4)
+scale = Vector2(1.14971, 1.11125)
+shape = SubResource("CircleShape2D_68dt2")
