@@ -9,16 +9,10 @@ extends PanelContainer
 
 func _on_tool_axe_pressed() -> void:
 	ToolManager.select_tool(DataTypes.Tools.AxeWood)
-
-
 func _on_tool_tilling_pressed() -> void:
 	ToolManager.select_tool(DataTypes.Tools.Tillground)
-
-
 func _on_tool_watering_can_pressed() -> void:
 	ToolManager.select_tool(DataTypes.Tools.WaterCrops)
-
-
 func _on_tool_corn_pressed() -> void:
 	ToolManager.select_tool(DataTypes.Tools.PlantWheat)
 

@@ -10,10 +10,13 @@ var wheat_harvest_scene = preload("res://scenes/objects/plants/wheat_harvest.tsc
 @onready var hurt_component: HurtComponent = $HurtComponent
 
 var growth_state: DataTypes.GrowthStates = DataTypes.GrowthStates.Seed 
-@export var destroyThreshold:int = 80
+#the higher the threshold, the less likely it would get destroyed
+@export var destroyThreshold:int = 70
 var destroyChance
 var rng 
 var justRained:bool = false
+
+#signal cropDestroyed
 
 func _ready() -> void:
 	watering_particles.emitting = false
@@ -22,11 +25,17 @@ func _ready() -> void:
 	hurt_component.hurt.connect(on_hurt) #kapag nag water ka sa plant unang tatawagin is si on_hurt 
 	growth_cycle_component.crop_maturity.connect(on_crop_maturity) #this function connect to crop maturity 
 	growth_cycle_component.crop_harvesting.connect(on_crop_harvesting) #this function connect to harvesting
+	
+	WeeklyReport.currentlyPlanted = WeeklyReport.currentlyPlanted + 1
+	
+	
+#region Initialize the chances of crops getting destroyed
 	rng =  RandomNumberGenerator.new()
 	rng.randomize()
 	destroyChance = rng.randi_range(0,100)
 	print(destroyChance)
 	DayAndNightCycleManager.justRained.connect(rainSwitch)
+#endregion
 
 func _process(delta: float) -> void:
 	growth_state = growth_cycle_component.get_current_growth_state()
@@ -35,18 +44,25 @@ func _process(delta: float) -> void:
 	if growth_state == DataTypes.GrowthStates.Maturity:
 		flowering_particles.emitting = true
 			
+#region this checks whether crops will get destroyed via rain
 	if DayAndNightCycleManager.rain and destroyChance > destroyThreshold:
-		print("Chance")
-		print(destroyChance)
-		print("Threshold")
-		print(destroyThreshold)
-		print(destroyChance > destroyThreshold)
+		#print("Chance")
+		#print(destroyChance)
+		#print("Threshold")
+		#print(destroyThreshold)
+		#print(destroyChance > destroyThreshold)
+		#emit_signal("cropDestroyed")
+		
+		#apparently, when using globals you cant direct += it
+		WeeklyReport.croploss = WeeklyReport.croploss + 1
+		WeeklyReport.currentlyPlanted = WeeklyReport.currentlyPlanted - 1
 		queue_free()
 	if justRained:
 		destroyChance = rng.randi_range(0,100)
-		print("Chance")
-		print(destroyChance)
+		#print("Chance")
+		#print(destroyChance)
 		justRained = false
+#endregion
 	
 
 func rainSwitch() -> void:
@@ -66,6 +82,7 @@ func on_crop_maturity() -> void:
 
 
 func on_crop_harvesting() -> void:
+	WeeklyReport.currentlyPlanted = WeeklyReport.currentlyPlanted - 1
 	var wheat_harvest_instance = wheat_harvest_scene.instantiate() as Node2D
 	wheat_harvest_instance.global_position = global_position
 	get_parent().add_child(wheat_harvest_instance)

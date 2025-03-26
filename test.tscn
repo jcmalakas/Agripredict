@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://brhij1opnghcd"]
+
+[ext_resource type="PackedScene" uid="uid://bfh72yk8mclw8" path="res://linearRegression.tscn" id="1_37kl0"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="LinearRegression" parent="." instance=ExtResource("1_37kl0")]
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+grow_horizontal = 1
+grow_vertical = 0

@@ -1,0 +1,3 @@
+- day and night manager have the rain chances threshold
+- wheat has the destroy threshold
+- 

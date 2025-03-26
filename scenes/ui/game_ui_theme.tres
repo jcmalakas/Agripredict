@@ -1,8 +1,23 @@
-[gd_resource type="Theme" load_steps=54 format=3 uid="uid://cvevndji4t07j"]
+[gd_resource type="Theme" load_steps=60 format=3 uid="uid://cvevndji4t07j"]
 
 [ext_resource type="Texture2D" uid="uid://b8e4mp6bhm7sb" path="res://assets/ui/basic_ui_sprites.png" id="1_bgm6m"]
 [ext_resource type="FontFile" uid="uid://yxyl7y3pde7b" path="res://assets/ui/fonts/pixelFont-7-8x14-sproutLands.ttf" id="2_8tl3y"]
 [ext_resource type="FontVariation" uid="uid://cmnhwcqohhh8x" path="res://assets/ui/fonts/zx_palm_variation.tres" id="2_66vrm"]
+
+[sub_resource type="FontVariation" id="FontVariation_mtjyl"]
+base_font = ExtResource("2_8tl3y")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mtjyl"]
+texture = ExtResource("1_bgm6m")
+texture_margin_left = 3.0
+texture_margin_top = 5.0
+texture_margin_right = 3.0
+texture_margin_bottom = 7.0
+region_rect = Rect2(275, 178, 90, 27)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r32iy"]
+texture = ExtResource("1_bgm6m")
+region_rect = Rect2(275, 212, 90, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jp06k"]
 atlas = ExtResource("1_bgm6m")
@@ -181,6 +196,17 @@ texture_margin_bottom = 4.0
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kwy10"]
 texture = SubResource("AtlasTexture_gsuxp")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cqa1q"]
+texture = ExtResource("1_bgm6m")
+texture_margin_left = 7.0
+texture_margin_top = 7.0
+texture_margin_right = 7.0
+texture_margin_bottom = 7.0
+region_rect = Rect2(245, 53, 38, 38)
+
+[sub_resource type="FontVariation" id="FontVariation_cqa1q"]
+base_font = ExtResource("2_8tl3y")
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tkwsi"]
 load_path = "res://.godot/imported/basic_ui_sprites.png-f1365ff47f1f008f610f3c558cf47256.ctex"
 
@@ -253,7 +279,19 @@ texture_margin_right = 4.0
 texture_margin_bottom = 6.0
 region_rect = Rect2(0, 0, 26, 28)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1hvfw"]
+texture = ExtResource("1_bgm6m")
+texture_margin_left = 7.0
+texture_margin_top = 7.0
+texture_margin_right = 7.0
+texture_margin_bottom = 7.0
+region_rect = Rect2(293, 5, 38, 38)
+
 [resource]
+Button/colors/font_color = Color(0.458824, 0.298039, 0.376471, 1)
+Button/fonts/font = SubResource("FontVariation_mtjyl")
+Button/styles/normal = SubResource("StyleBoxTexture_mtjyl")
+Button/styles/pressed = SubResource("StyleBoxTexture_r32iy")
 DarkWoodPanel/base_type = &"PanelContainer"
 DarkWoodPanel/styles/panel = SubResource("StyleBoxTexture_qdrsn")
 DayAndNightButton/base_type = &"Button"
@@ -286,9 +324,13 @@ MarginContainer/constants/margin_bottom = 10
 MarginContainer/constants/margin_left = 10
 MarginContainer/constants/margin_right = 10
 MarginContainer/constants/margin_top = 10
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_cqa1q")
+TextEdit/fonts/font = SubResource("FontVariation_cqa1q")
 ToolButton/base_type = &"Button"
 ToolButton/styles/disabled = SubResource("StyleBoxTexture_yc8wa")
 ToolButton/styles/focus = SubResource("StyleBoxTexture_851dh")
 ToolButton/styles/hover = SubResource("StyleBoxTexture_txdim")
 ToolButton/styles/normal = SubResource("StyleBoxTexture_gf5rp")
 ToolButton/styles/pressed = SubResource("StyleBoxTexture_ecq5d")
+pcz1/base_type = &"PanelContainer"
+pcz1/styles/panel = SubResource("StyleBoxTexture_1hvfw")

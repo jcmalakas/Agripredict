@@ -23,8 +23,8 @@ atlas = ExtResource("3_8nx4v")
 region = Rect2(0, 0, 16, 16)
 
 [node name="ToolsPanel" type="PanelContainer"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 108.0
+offset_bottom = 48.0
 theme = ExtResource("1_b8pwl")
 theme_type_variation = &"DarkWoodPanel"
 script = ExtResource("2_btni8")
@@ -38,27 +38,31 @@ theme_override_constants/margin_bottom = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 
 [node name="ToolTilling" type="Button" parent="MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(26, 26)
+custom_minimum_size = Vector2(26, 32)
 layout_mode = 2
 theme_type_variation = &"ToolButton"
 icon = SubResource("AtlasTexture_jdg53")
 icon_alignment = 1
+expand_icon = true
 
 [node name="ToolWateringCan" type="Button" parent="MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(26, 26)
+custom_minimum_size = Vector2(26, 32)
 layout_mode = 2
 theme_type_variation = &"ToolButton"
 icon = SubResource("AtlasTexture_ydf7v")
 icon_alignment = 1
+expand_icon = true
 
 [node name="ToolCorn" type="Button" parent="MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(26, 26)
+custom_minimum_size = Vector2(26, 32)
 layout_mode = 2
 theme_type_variation = &"ToolButton"
 icon = SubResource("AtlasTexture_xn2rp")
 icon_alignment = 1
+expand_icon = true
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolTilling" to="." method="_on_tool_tilling_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolWateringCan" to="." method="_on_tool_watering_can_pressed"]

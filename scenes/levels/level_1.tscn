@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=4 uid="uid://bjq1qgbgdocbu"]
+[gd_scene load_steps=13 format=4 uid="uid://bjq1qgbgdocbu"]
 
+[ext_resource type="Script" uid="uid://dag7j7bv3kack" path="res://scenes/levels/level_1.gd" id="1_iav0o"]
 [ext_resource type="TileSet" uid="uid://bv22lfvipjil6" path="res://tileSets/game_tile_set.tres" id="1_kolrv"]
 [ext_resource type="PackedScene" uid="uid://bq2ep8sbs8xvs" path="res://scenes/character/chicken/chicken.tscn" id="2_khn7k"]
 [ext_resource type="PackedScene" uid="uid://c8x2dx1p1simb" path="res://scenes/character/cow/cow.tscn" id="3_kmtmc"]
@@ -22,6 +23,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(762, 373, 744, 373, 744
 
 [node name="Level1" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_iav0o")
 
 [node name="GameTileMap" type="Node2D" parent="."]
 y_sort_enabled = true
