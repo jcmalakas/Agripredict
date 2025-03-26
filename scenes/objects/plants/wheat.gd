@@ -11,7 +11,7 @@ var wheat_harvest_scene = preload("res://scenes/objects/plants/wheat_harvest.tsc
 
 var growth_state: DataTypes.GrowthStates = DataTypes.GrowthStates.Seed 
 #the higher the threshold, the less likely it would get destroyed
-@export var destroyThreshold:int = 70
+@export var destroyThreshold:int = 80
 var destroyChance
 var rng 
 var justRained:bool = false
@@ -33,7 +33,7 @@ func _ready() -> void:
 	rng =  RandomNumberGenerator.new()
 	rng.randomize()
 	destroyChance = rng.randi_range(0,100)
-	print(destroyChance)
+	print("This is the destroy chance of the wheat"+str(destroyChance))
 	DayAndNightCycleManager.justRained.connect(rainSwitch)
 #endregion
 
@@ -56,12 +56,21 @@ func _process(delta: float) -> void:
 		#apparently, when using globals you cant direct += it
 		WeeklyReport.croploss = WeeklyReport.croploss + 1
 		WeeklyReport.currentlyPlanted = WeeklyReport.currentlyPlanted - 1
+		print("I go, bye bye~")
+		print(str((destroyChance > destroyThreshold)) + " = DC: " + str(destroyChance) + " DT: " + str(destroyThreshold))
 		queue_free()
+	
+	#Re-roll the rng of destroy chance ng rice
 	if justRained:
 		destroyChance = rng.randi_range(0,100)
+		
 		#print("Chance")
 		#print(destroyChance)
+		print("new destroy chance of the rice"+str(destroyChance))
 		justRained = false
+		
+
+
 #endregion
 	
 

@@ -4,7 +4,8 @@ const MINUTES_PER_DAY: int = 24 * 60
 const MINUTES_PER_HOUR: int = 60
 const GAME_MINUTE_DURATION: float = TAU / MINUTES_PER_DAY
 
-const rainThreshold:int = 70
+#the lower, the frequent
+const rainThreshold:int = 40
 
 var game_speed: float = 5.0
 

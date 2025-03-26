@@ -13,7 +13,6 @@ size = Vector2(14, 8)
 [node name="Wheat" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_iuffh")
-destroyThreshold = 50
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -4)

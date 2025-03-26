@@ -8,11 +8,14 @@ extends Control
 @onready var cropLoss:Label =  $PanelContainer/MarginContainer/PanelContainer/MarginContainer2/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Datas/cropLoss
 @onready var profits:Label = $PanelContainer/MarginContainer/PanelContainer/MarginContainer2/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Datas/profits
 
-#this is the X values
-	#var bills : Array = [34, 108, 64, 88, 99, 51]
-var cropLosses : Array = WeeklyReport.cropLosses
 #this is the Y values
 	#var tips: Array = [5, 17, 11, 8, 14, 5]
+#var cropLosses : Array = [5, 17, 11, 8, 14, 5]
+var cropLosses : Array = WeeklyReport.cropLosses
+
+#this is the X values
+	#var bills : Array = [34, 108, 64, 88, 99, 51]
+#var rainChances: Array = [34, 108, 64, 88, 99, 51]
 var rainChances: Array = WeeklyReport.rainChances
 
 var scatterPlot : Function
@@ -46,8 +49,8 @@ func _ready() -> void:
 	cp.colors.text = Color.WHITE_SMOKE
 	cp.draw_bounding_box = false
 	cp.title = "Linear Regression"
-	cp.x_label = "Crop"
-	cp.y_label = "Rain"
+	cp.x_label = "Rain"
+	cp.y_label = "Loss"
 	cp.x_scale = 5
 	cp.y_scale = 10
 	cp.interactive = true # false by default, it allows the chart to create a tooltip to show point values
@@ -56,7 +59,7 @@ func _ready() -> void:
 
 #region ScatterPlotProperties
 	scatterPlot = Function.new(
-		cropLosses, rainChances, "", # This will create a function with x and y values taken by the Arrays 
+		rainChances, cropLosses, "", # This will create a function with x and y values taken by the Arrays 
 						# we have created previously. This function will also be named "Pressure"
 						# as it contains 'pressure' values.
 						# If set, the name of a function will be used both in the Legend
@@ -76,21 +79,21 @@ func _ready() -> void:
 #region Table Data
 	#Taking the data in the table, Reference: https://youtu.be/Qa2APhWjQPc?t=1159
 	#godot has no built in function on getting the mean so I create one
-	var billsMeans:float = calculate_mean(cropLosses)
+	var billsMeans:float = calculate_mean(rainChances)
 	var billsDeviation : Array
-	for x in cropLosses:
+	for x in rainChances:
 		billsDeviation.append(x - billsMeans)
 		pass
-	print("This is the bill ", cropLosses)
+	print("This is the bill ", rainChances)
 	print("This is the bill mean ", billsMeans)
 	print("This is the bill deviation ", billsDeviation)
 	
-	var tipsMeans:float = calculate_mean(rainChances)
+	var tipsMeans:float = calculate_mean(cropLosses)
 	var tipsDeviation : Array
-	for y in rainChances:
+	for y in cropLosses:
 		tipsDeviation.append(y - tipsMeans)
 		pass
-	print("This is the tips ", rainChances)
+	print("This is the tips ", cropLosses)
 	print("This is the tips mean ", tipsMeans)
 	print("This is the tips deviation ", tipsDeviation)
 	
@@ -115,10 +118,10 @@ func _ready() -> void:
 	var regressionLineX : Array
 	#I added 50 in the original so the line looks longer
 		#var graphLenghtX = cropLosses.max() + 50
-	var graphLenghtX = cropLosses.max() + 20
+	var graphLenghtX = rainChances.max() + 40
 	
 	
-	for x in range(0, graphLenghtX, 20):
+	for x in range(0, 110, 20):
 		#b1 = slope, b0 = intercept, x is given
 		#y = b1x - b0
 		var y = (b1 * x) - abs(b0)
@@ -126,7 +129,7 @@ func _ready() -> void:
 		regressionLineX.append(x)
 	
 	regressionLine = Function.new(
-		regressionLineX, regressionLineY, "Regression Line:", # This will create a function with x and y values taken by the Arrays 
+		regressionLineX, regressionLineY, "Line", # This will create a function with x and y values taken by the Arrays 
 						# we have created previously. This function will also be named "Pressure"
 						# as it contains 'pressure' values.
 						# If set, the name of a function will be used both in the Legend
@@ -144,8 +147,9 @@ func _ready() -> void:
 
 	
 	chart.plot([scatterPlot, regressionLine], cp)
-
 	
+	print("rain Chances" + str(cropLosses))
+	print("crop Losses" + str(rainChances))
 	#print(regressionLineX)
 	#print(regressionLineY)
 
