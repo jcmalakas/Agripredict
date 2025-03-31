@@ -29,13 +29,13 @@ func _ready() -> void:
 	WeeklyReport.currentlyPlanted = WeeklyReport.currentlyPlanted + 1
 	
 	
-#region Initialize the chances of crops getting destroyed
-	rng =  RandomNumberGenerator.new()
-	rng.randomize()
-	destroyChance = rng.randi_range(0,100)
-	print("This is the destroy chance of the wheat"+str(destroyChance))
-	DayAndNightCycleManager.justRained.connect(rainSwitch)
-#endregion
+##region Initialize the chances of crops getting destroyed
+	#rng =  RandomNumberGenerator.new()
+	#rng.randomize()
+	#destroyChance = rng.randi_range(0,100)
+	#print("This is the destroy chance of the wheat"+str(destroyChance))
+	##DayAndNightCycleManager.justRained.connect(rainSwitch)
+##endregion
 
 func _process(delta: float) -> void:
 	growth_state = growth_cycle_component.get_current_growth_state()
@@ -45,7 +45,15 @@ func _process(delta: float) -> void:
 		flowering_particles.emitting = true
 			
 #region this checks whether crops will get destroyed via rain
-	if DayAndNightCycleManager.rain and destroyChance > destroyThreshold:
+	#if WeeklyReport.justRained and destroyChance > destroyThreshold:
+	if WeeklyReport.justRained:
+		if WeeklyReport.cropLoss <= 0:
+			WeeklyReport.cropLoss = 0
+			WeeklyReport.justRained = false
+			print("Stopping crop destroy")
+			print("Current Crop planted: " + str(WeeklyReport.currentlyPlanted))
+			return
+		print("Current Crop loss total: " + str(WeeklyReport.cropLoss))
 		#print("Chance")
 		#print(destroyChance)
 		#print("Threshold")
@@ -54,28 +62,25 @@ func _process(delta: float) -> void:
 		#emit_signal("cropDestroyed")
 		
 		#apparently, when using globals you cant direct += it
-		WeeklyReport.croploss = WeeklyReport.croploss + 1
+		WeeklyReport.cropLoss = WeeklyReport.cropLoss - 1
 		WeeklyReport.currentlyPlanted = WeeklyReport.currentlyPlanted - 1
-		print("I go, bye bye~")
-		print(str((destroyChance > destroyThreshold)) + " = DC: " + str(destroyChance) + " DT: " + str(destroyThreshold))
+		#print("I go, bye bye~")
+		#print(str((destroyChance > destroyThreshold)) + " = DC: " + str(destroyChance) + " DT: " + str(destroyThreshold))
 		queue_free()
 	
-	#Re-roll the rng of destroy chance ng rice
-	if justRained:
-		destroyChance = rng.randi_range(0,100)
-		
-		#print("Chance")
-		#print(destroyChance)
-		print("new destroy chance of the rice"+str(destroyChance))
-		justRained = false
-		
-
-
+	##Re-roll the rng of destroy chance ng rice
+	#if justRained:
+		#destroyChance = rng.randi_range(0,100)
+		#
+		##print("Chance")
+		##print(destroyChance)
+		#print("new destroy chance of the rice"+str(destroyChance))
+		#justRained = false
 #endregion
 	
 
-func rainSwitch() -> void:
-	justRained = true
+#func rainSwitch() -> void:
+	#justRained = true
 
 # here is the function of on_hurt component
 func on_hurt(hit_damage: int) -> void:

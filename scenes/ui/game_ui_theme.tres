@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=60 format=3 uid="uid://cvevndji4t07j"]
+[gd_resource type="Theme" load_steps=74 format=3 uid="uid://cvevndji4t07j"]
 
 [ext_resource type="Texture2D" uid="uid://b8e4mp6bhm7sb" path="res://assets/ui/basic_ui_sprites.png" id="1_bgm6m"]
 [ext_resource type="FontFile" uid="uid://yxyl7y3pde7b" path="res://assets/ui/fonts/pixelFont-7-8x14-sproutLands.ttf" id="2_8tl3y"]
@@ -6,6 +6,12 @@
 
 [sub_resource type="FontVariation" id="FontVariation_mtjyl"]
 base_font = ExtResource("2_8tl3y")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mtjyl"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cqa1q"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mtjyl"]
 texture = ExtResource("1_bgm6m")
@@ -279,6 +285,34 @@ texture_margin_right = 4.0
 texture_margin_bottom = 6.0
 region_rect = Rect2(0, 0, 26, 28)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtjyl"]
+atlas = ExtResource("1_bgm6m")
+region = Rect2(450, 162, 12, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3405b"]
+texture = SubResource("AtlasTexture_mtjyl")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwis4"]
+atlas = ExtResource("1_bgm6m")
+region = Rect2(467, 162, 10, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1fwkl"]
+texture = SubResource("AtlasTexture_kwis4")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtujg"]
+atlas = ExtResource("1_bgm6m")
+region = Rect2(418, 162, 12, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2isuy"]
+texture = SubResource("AtlasTexture_mtujg")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_owel7"]
+atlas = ExtResource("1_bgm6m")
+region = Rect2(434, 162, 12, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ivv52"]
+texture = SubResource("AtlasTexture_owel7")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1hvfw"]
 texture = ExtResource("1_bgm6m")
 texture_margin_left = 7.0
@@ -287,9 +321,25 @@ texture_margin_right = 7.0
 texture_margin_bottom = 7.0
 region_rect = Rect2(293, 5, 38, 38)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqa1q"]
+atlas = ExtResource("1_bgm6m")
+region = Rect2(773, 132, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kwis4"]
+texture = SubResource("AtlasTexture_cqa1q")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1hvfw"]
+atlas = ExtResource("1_bgm6m")
+region = Rect2(805, 134, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w57q2"]
+texture = SubResource("AtlasTexture_1hvfw")
+
 [resource]
 Button/colors/font_color = Color(0.458824, 0.298039, 0.376471, 1)
 Button/fonts/font = SubResource("FontVariation_mtjyl")
+Button/styles/focus = SubResource("StyleBoxFlat_mtjyl")
+Button/styles/hover = SubResource("StyleBoxFlat_cqa1q")
 Button/styles/normal = SubResource("StyleBoxTexture_mtjyl")
 Button/styles/pressed = SubResource("StyleBoxTexture_r32iy")
 DarkWoodPanel/base_type = &"PanelContainer"
@@ -332,5 +382,17 @@ ToolButton/styles/focus = SubResource("StyleBoxTexture_851dh")
 ToolButton/styles/hover = SubResource("StyleBoxTexture_txdim")
 ToolButton/styles/normal = SubResource("StyleBoxTexture_gf5rp")
 ToolButton/styles/pressed = SubResource("StyleBoxTexture_ecq5d")
+cancelButton/base_type = &"Button"
+cancelButton/styles/hover = SubResource("StyleBoxTexture_3405b")
+cancelButton/styles/normal = SubResource("StyleBoxTexture_3405b")
+cancelButton/styles/pressed = SubResource("StyleBoxTexture_1fwkl")
+checkButton/base_type = &"Button"
+checkButton/styles/hover = SubResource("StyleBoxTexture_2isuy")
+checkButton/styles/normal = SubResource("StyleBoxTexture_2isuy")
+checkButton/styles/pressed = SubResource("StyleBoxTexture_ivv52")
 pcz1/base_type = &"PanelContainer"
 pcz1/styles/panel = SubResource("StyleBoxTexture_1hvfw")
+shopButton/base_type = &"Button"
+shopButton/styles/hover = SubResource("StyleBoxTexture_kwis4")
+shopButton/styles/normal = SubResource("StyleBoxTexture_kwis4")
+shopButton/styles/pressed = SubResource("StyleBoxTexture_w57q2")

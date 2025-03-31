@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bq0jejfnuyhmj"]
+[gd_scene load_steps=10 format=3 uid="uid://bq0jejfnuyhmj"]
 
 [ext_resource type="Theme" uid="uid://cvevndji4t07j" path="res://scenes/ui/game_ui_theme.tres" id="1_b8pwl"]
 [ext_resource type="Script" uid="uid://w4pwln83syf3" path="res://scenes/ui/tools_panel.gd" id="2_btni8"]
 [ext_resource type="Texture2D" uid="uid://bhntucgr6ee15" path="res://assets/game/Objects/Basic_Plants.png" id="3_8nx4v"]
+[ext_resource type="Script" uid="uid://d4k6re4avvtou" path="res://scenes/ui/rice_count.gd" id="4_0jxvs"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cce3b"]
 load_path = "res://.godot/imported/Basic_tools_and_meterials.png-dfe355595628e7d1e014c19e0016442b.ctex"
@@ -63,6 +64,18 @@ theme_type_variation = &"ToolButton"
 icon = SubResource("AtlasTexture_xn2rp")
 icon_alignment = 1
 expand_icon = true
+
+[node name="riceCount" type="Label" parent="MarginContainer/HBoxContainer/ToolCorn"]
+layout_mode = 0
+offset_right = 90.0
+offset_bottom = 84.0
+scale = Vector2(0.1, 0.1)
+pivot_offset = Vector2(20, -2)
+theme = ExtResource("1_b8pwl")
+theme_override_font_sizes/font_size = 100
+text = "1"
+horizontal_alignment = 1
+script = ExtResource("4_0jxvs")
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolTilling" to="." method="_on_tool_tilling_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolWateringCan" to="." method="_on_tool_watering_can_pressed"]

@@ -31,8 +31,12 @@ func get_cell_under_mouse() -> void:
 	distance = player.global_position.distance_to(local_cell_position)
 	
 func add_crop() -> void:
-	if distance <20.0:
+	if distance < 20.0:
 		if ToolManager.selected_tool == DataTypes.Tools.PlantWheat:
+			if InventoryManager.riceCount <= 0:
+				return
+
+			InventoryManager.riceCount -= 1
 			var wheat_instance = wheat_plant_scene.instantiate() as Node2D
 			wheat_instance.global_position = local_cell_position
 			get_parent().find_child("CropFields").add_child(wheat_instance)

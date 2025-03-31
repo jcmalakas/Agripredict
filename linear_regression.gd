@@ -16,10 +16,12 @@ var cropLosses : Array = WeeklyReport.cropLosses
 #this is the X values
 	#var bills : Array = [34, 108, 64, 88, 99, 51]
 #var rainChances: Array = [34, 108, 64, 88, 99, 51]
-var rainChances: Array = WeeklyReport.rainChances
+var rainChances: Array = WeeklyReport.rainStrenghts
 
 var scatterPlot : Function
 var regressionLine: Function
+
+signal donePressedLR
 
 func _process(delta: float) -> void:
 	currentlyPlanted.text = str(WeeklyReport.currentlyPlanted) 
@@ -36,6 +38,7 @@ func _process(delta: float) -> void:
 	
 
 func _ready() -> void:
+	
 #region Initializing the chart Properties
 	#initialize the chart
 	var cp: ChartProperties = ChartProperties.new()
@@ -49,8 +52,8 @@ func _ready() -> void:
 	cp.colors.text = Color.WHITE_SMOKE
 	cp.draw_bounding_box = false
 	cp.title = "Linear Regression"
-	cp.x_label = "Rain"
-	cp.y_label = "Loss"
+	cp.x_label = "Rain Strenght (%)"
+	cp.y_label = "Crop Loss"
 	cp.x_scale = 5
 	cp.y_scale = 10
 	cp.interactive = true # false by default, it allows the chart to create a tooltip to show point values
@@ -164,10 +167,13 @@ func _on_button_pressed() -> void:
 	#chart.queue_redraw()
 	#pass # Replace with function body.
 	#WeeklyReport.done = true
-	get_tree().paused = false
-	WeeklyReport.weeklyReportInstantiated = false
-	WeeklyReport.rainCount = 0
-	WeeklyReport.done = true
+	
+	#get_tree().paused = false
+	#WeeklyReport.weeklyReportInstantiated = false
+	#WeeklyReport.rainCount = 0
+	
+	#WeeklyReport.shown = true
+	WeeklyReport.dataFinalized = false
 	get_parent().queue_free()
 	
 

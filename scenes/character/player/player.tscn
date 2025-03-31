@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://tquwk0xon4o3"]
+[gd_scene load_steps=63 format=3 uid="uid://tquwk0xon4o3"]
 
 [ext_resource type="Script" uid="uid://t0jo0cd3hno3" path="res://scenes/character/player/player.gd" id="1_jwjvm"]
 [ext_resource type="Texture2D" uid="uid://dybwn221yh3ck" path="res://assets/game/Characters/Basic Charakter Actions.png" id="1_xpw0x"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://c82dss3fcdsf1" path="res://scenes/character/player/tilling_state.gd" id="8_g5y4b"]
 [ext_resource type="Script" uid="uid://d6umo06jgb4b" path="res://scenes/character/player/watering_state.gd" id="9_h8x2x"]
 [ext_resource type="PackedScene" uid="uid://d24mo0dp5k2q" path="res://scenes/components/hit_component.tscn" id="10_23rtp"]
+[ext_resource type="Script" uid="uid://dqfc61600ltv8" path="res://scenes/components/rainComponent.gd" id="11_in2if"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_da2eo"]
 atlas = ExtResource("1_xpw0x")
@@ -510,3 +511,6 @@ process_material = SubResource("ParticleProcessMaterial_yuskr")
 position = Vector2(0, -4)
 scale = Vector2(1.14971, 1.11125)
 shape = SubResource("CircleShape2D_68dt2")
+
+[node name="rainComponent" type="Node2D" parent="."]
+script = ExtResource("11_in2if")

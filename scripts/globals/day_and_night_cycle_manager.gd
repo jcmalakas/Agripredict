@@ -21,10 +21,11 @@ signal game_time(time: float)
 signal time_tick(day: int, hour: int, minute: int)
 signal time_tick_day(day: int)
 
-signal justRained
+#signal justRained
 signal dayPassed
+signal weekPassed
 
-var rain = false
+#var rain = false
 
 func _ready() -> void:
 	set_initial_time()
@@ -55,32 +56,35 @@ func recalculate_time() -> void:
 		time_tick.emit(day, hour, minute)
 	
 	if current_day != day:
-#region this makes it rain
-		var rng = RandomNumberGenerator.new()
-		rng.randomize()
-
-		# Define the step and max value
-		var step = 10
-		var max_value = 100
-
-		# Generate a random value with the specified step
-		var rainChance = rng.randi_range(0, max_value / step) * step
-
-		# The lower the more chance it rains
-		if rainChance > rainThreshold and not current_day == 0:
-			emit_signal("justRained")
-			
-			#emit_signal("rainChance", rainChance)
-			#print("Emitted")
-			rain = true
-			
-		else:
-			rain = false
-#endregion
+##region this makes it rain
+		#var rng = RandomNumberGenerator.new()
+		#rng.randomize()
+#
+		## Define the step and max value
+		#var step = 10
+		#var max_value = 100
+#
+		## Generate a random value with the specified step
+		#var rainChance = rng.randi_range(0, max_value / step) * step
+#
+		## The lower the more chance it rains
+		#if rainChance > rainThreshold and not current_day == 0:
+			#emit_signal("justRained")
+			#
+			##emit_signal("rainChance", rainChance)
+			##print("Emitted")
+			#rain = true
+			#
+		#else:
+			#rain = false
+##endregion
 		
 		current_day = day
 		time_tick_day.emit(day)
 		
-		WeeklyReport.rainChances.append(rainChance)
+		#WeeklyReport.rainChances.append(rainChance)
 		dayPassed.emit()
+		if day % 2 == 0:
+			#print("Week has passed")
+			weekPassed.emit()
 	

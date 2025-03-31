@@ -1,3 +1,4 @@
 extends Label
+
 func _process(delta: float) -> void:
-	self.text = str(InventoryManager.money)
+	text = str(InventoryManager.riceCount)
