@@ -174,6 +174,7 @@ func _on_button_pressed() -> void:
 	
 	#WeeklyReport.shown = true
 	WeeklyReport.dataFinalized = false
+	get_tree().paused = false
 	get_parent().queue_free()
 	
 
@@ -194,7 +195,6 @@ func multiply_arrays(array1, array2):
 	var result = []
 	for i in range(array1.size()):
 		result.append(array1[i] * array2[i])
-
 	return result
 	
 func square_array_elements(array):

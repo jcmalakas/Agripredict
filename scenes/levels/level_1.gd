@@ -14,5 +14,6 @@ func showLinearRegression():
 	var instance = LRCanvasLayer.instantiate()
 	#LRCanvasLayer.show()
 	add_child(instance)
+	get_tree().paused = true
 	
 	

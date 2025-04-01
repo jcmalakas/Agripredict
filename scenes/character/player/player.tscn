@@ -497,6 +497,7 @@ debug_color = Color(0.929265, 0.225519, 0.365746, 0.42)
 zoom = Vector2(2, 2)
 
 [node name="rain" type="GPUParticles2D" parent="."]
+process_mode = 3
 position = Vector2(2, 45)
 emitting = false
 amount = 500

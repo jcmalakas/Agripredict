@@ -36,9 +36,11 @@ func _on_confirm_pressed() -> void:
 		InventoryManager.money -= cropProduct
 		InventoryManager.riceCount += riceBought
 		print(InventoryManager.riceCount)
+		get_tree().paused = false
 		queue_free()
 	print("Test button confirm")
 	pass # Replace with function body.
 
 func _on_cancel_pressed() -> void:
+	get_tree().paused = false
 	queue_free()

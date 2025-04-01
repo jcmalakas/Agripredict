@@ -84,7 +84,7 @@ func recalculate_time() -> void:
 		
 		#WeeklyReport.rainChances.append(rainChance)
 		dayPassed.emit()
-		if day % 2 == 0:
+		if day % 28 == 0:
 			#print("Week has passed")
 			weekPassed.emit()
 	
