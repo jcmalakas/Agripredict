@@ -84,5 +84,6 @@ var shown = false
 var dataFinalized:bool = false
 
 var justRained:bool = false
-	
-var profitPerHarvest:int = 23
+
+
+var profitPerHarvest:int = 40
