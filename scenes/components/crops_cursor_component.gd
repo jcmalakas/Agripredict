@@ -31,13 +31,21 @@ func get_cell_under_mouse() -> void:
 	distance = player.global_position.distance_to(local_cell_position)
 	
 func add_crop() -> void:
-	if distance < 20.0:
+	if distance < 20.0 and cell_source_id != -1:
+		var crop_nodes = get_parent().find_child("CropFields").get_children()
 		if ToolManager.selected_tool == DataTypes.Tools.PlantWheat:
 			if InventoryManager.riceCount <= 0:
 				return
 
-			InventoryManager.riceCount -= 1
+			# Check if a crop is already present on this tile
+		for node: Node2D in crop_nodes:
+			if node.global_position == local_cell_position:
+				return  # Exit the function to prevent planting
+
+		# No crop is present, proceed to plant
+		if ToolManager.selected_tool == DataTypes.Tools.PlantWheat:
 			var wheat_instance = wheat_plant_scene.instantiate() as Node2D
+			InventoryManager.riceCount -= 1
 			wheat_instance.global_position = local_cell_position
 			get_parent().find_child("CropFields").add_child(wheat_instance)
 			
