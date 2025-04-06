@@ -1,6 +1,10 @@
 extends Node2D
 
 @onready var rainParticle:GPUParticles2D = $"../rain"
+@onready var no_damage_audio: AudioStreamPlayer = $noDamageAudio
+@onready var mild_audio: AudioStreamPlayer = $mildAudio
+@onready var storm_audio: AudioStreamPlayer = $stormAudio
+
 
 var totalCropLoss:int
 
@@ -31,6 +35,10 @@ func rainCheck():
 		print("Not raining")
 		WeeklyReport.dataFinalized = true
 		rainParticle.emitting = false
+		
+		no_damage_audio.stop()
+		mild_audio.stop()
+		storm_audio.stop()
 		return
 	WeeklyReport.rainCount += 1
 #endregion
@@ -50,16 +58,31 @@ func rainCheck():
 		multiplierRNG = rng.randf_range(0.3, 0.5)
 		damagePercentage = WeeklyReport.currentlyPlanted * multiplierRNG
 		rainParticle.amount_ratio = 1
+		
+		
+		storm_audio.play()
+		no_damage_audio.stop()
+		mild_audio.stop()
+		
 		print("Typhoon")
 	elif rainStrenght <= mildDamageThreshold.y and rainStrenght >= mildDamageThreshold.x:
 		multiplierRNG = rng.randf_range(0.2, 0.3)
 		damagePercentage = WeeklyReport.currentlyPlanted * multiplierRNG
 		rainParticle.amount_ratio = 0.5
+		
+		mild_audio.play()
+		no_damage_audio.stop()
+		storm_audio.stop()
+		
 		print("Mild")
 	else:
 		multiplierRNG = rng.randf_range(0.0, 0.1)
 		damagePercentage = WeeklyReport.currentlyPlanted * multiplierRNG
 		rainParticle.amount_ratio = 0.1
+		no_damage_audio.play()
+		mild_audio.stop()
+		storm_audio.stop()
+		
 		print("No damage")
 	
 	damagePercentage = int(damagePercentage)
@@ -76,4 +99,4 @@ func rainCheck():
 	print("damage: " + str(damagePercentage))
 	print("CropLoss: " + str(WeeklyReport.cropLosses))
 	print("rainStrenght: " + str(WeeklyReport.rainStrenghts))
-#endregion
+#endregiond

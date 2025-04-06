@@ -2,9 +2,9 @@ extends Node
 
 var game_menu_screen = preload("res://scenes/ui/game_menu_screen.tscn")
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("game_menu"):
-		show_game_menu_screen()
+#func _unhandled_input(event: InputEvent) -> void:
+	#if event.is_action_pressed("game_menu"):
+		#show_game_menu_screen()
 
 func start_game() -> void:
 	SceneManager.load_main_scene_container()

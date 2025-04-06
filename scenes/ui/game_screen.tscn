@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://du5lrbo1q403s"]
+[gd_scene load_steps=9 format=3 uid="uid://du5lrbo1q403s"]
 
 [ext_resource type="Theme" uid="uid://cvevndji4t07j" path="res://scenes/ui/game_ui_theme.tres" id="1_bv1rp"]
+[ext_resource type="Script" uid="uid://gwujimf4cyep" path="res://scenes/ui/game_screen.gd" id="1_ce4rh"]
 [ext_resource type="PackedScene" uid="uid://bq0jejfnuyhmj" path="res://scenes/ui/tools_panel.tscn" id="2_7d8cf"]
 [ext_resource type="PackedScene" uid="uid://d1wsnip0sqo8j" path="res://scenes/ui/inventory_panel.tscn" id="3_nvde6"]
 [ext_resource type="PackedScene" uid="uid://b3ti3bi0ohrvs" path="res://scenes/ui/day_and_night_panel.tscn" id="4_rx2p7"]
@@ -9,6 +10,7 @@
 [ext_resource type="Script" uid="uid://bhuykt58lwqal" path="res://scenes/ui/shop_button.gd" id="8_ce4rh"]
 
 [node name="GameScreen" type="CanvasLayer"]
+script = ExtResource("1_ce4rh")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15

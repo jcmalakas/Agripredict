@@ -1,10 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://cr6abx2gpqgyn"]
+[gd_scene load_steps=19 format=3 uid="uid://cr6abx2gpqgyn"]
 
 [ext_resource type="Script" uid="uid://d2vuia84ubxmo" path="res://static_body_2d.gd" id="1_opa1x"]
 [ext_resource type="Texture2D" uid="uid://bibgdsraui84a" path="res://assets/game/Objects/Chest.png" id="2_acra8"]
+[ext_resource type="AudioStream" uid="uid://c3bdqwai5n80b" path="res://sfx/337049__shinephoenixstormcrow__320655__rhodesmas__level-up-01.mp3" id="3_acra8"]
+[ext_resource type="AudioStream" uid="uid://cbqd5nedk567h" path="res://sfx/cc0/590949__rudmer_rotteveel__creaky-door-fast-01.wav" id="4_pev8c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pev8c"]
-radius = 24.0832
+radius = 17.0294
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f08ug"]
 atlas = ExtResource("2_acra8")
@@ -128,6 +130,13 @@ offset_right = 145.0
 offset_bottom = 6.0
 scale = Vector2(0.5, 0.5)
 text = "Press E to sell "
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_acra8")
+
+[node name="chestOpenAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_pev8c")
+bus = &"SFX"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

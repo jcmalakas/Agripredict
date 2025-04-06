@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bjw5fmf3t7yq5"
+path="res://.godot/imported/edited - 518799__mateusz_chenc__shaken-bush.wav-045997500ca594845ce841518ad4b50f.sample"
+
+[deps]
+
+source_file="res://sfx/cc0/edited - 518799__mateusz_chenc__shaken-bush.wav"
+dest_files=["res://.godot/imported/edited - 518799__mateusz_chenc__shaken-bush.wav-045997500ca594845ce841518ad4b50f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,8 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://4mwb8pwuc2bg"]
+[gd_scene load_steps=18 format=3 uid="uid://4mwb8pwuc2bg"]
 
 [ext_resource type="Script" uid="uid://ocjklgpeagiy" path="res://scenes/houses/door.gd" id="1_chlkk"]
 [ext_resource type="Texture2D" uid="uid://cp7wakfgj7pxi" path="res://assets/game/Tilesets/Doors.png" id="1_dqbem"]
 [ext_resource type="PackedScene" uid="uid://dpewnuw3npson" path="res://scenes/components/interactable_component.tscn" id="3_qu8vp"]
+[ext_resource type="AudioStream" uid="uid://do5pn88us7jet" path="res://sfx/cc0/door open - 440642__seansecret__opening-door-2.wav" id="4_nno8d"]
+[ext_resource type="AudioStream" uid="uid://hjngo2n70qsh" path="res://sfx/cc0/door close - 440642__seansecret__opening-door-2.wav" id="5_wapg7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fowdg"]
 atlas = ExtResource("1_dqbem")
@@ -107,3 +109,9 @@ shape = SubResource("RectangleShape2D_q0gp1")
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_vnoeo")
 debug_color = Color(0.28651, 0.617789, 0.365841, 0.42)
+
+[node name="doorOpenAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_nno8d")
+
+[node name="doorCloseAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_wapg7")

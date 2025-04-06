@@ -1,0 +1,25 @@
+[gd_scene load_steps=7 format=3 uid="uid://bdurlw7ukqauk"]
+
+[ext_resource type="AudioStream" uid="uid://dcs7tftagl33n" path="res://sfx/250749__joshuaempyre__groovy-guitar-loop.wav" id="1_xe8l3"]
+[ext_resource type="AudioStream" uid="uid://c2n5v27tnj5b2" path="res://sfx/250750__joshuaempyre__chill-guitar-with-drums-loop.wav" id="2_ws6wn"]
+[ext_resource type="Script" uid="uid://b8i25644hr1wu" path="res://scenes/components/music_component.gd" id="3_ws6wn"]
+[ext_resource type="AudioStream" uid="uid://dg1a2iqhlk6h3" path="res://sfx/cc0/246315__dvideoguy__folk-guitar-music-track.wav" id="3_xeaq2"]
+[ext_resource type="AudioStream" uid="uid://coytrr1u7rg7t" path="res://sfx/cc0/327575__ueffects__guitar-background-sample.wav" id="4_pxbt5"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_18nlu"]
+playback_mode = 1
+streams_count = 4
+stream_0/stream = ExtResource("1_xe8l3")
+stream_1/stream = ExtResource("2_ws6wn")
+stream_2/stream = ExtResource("3_xeaq2")
+stream_3/stream = ExtResource("4_pxbt5")
+
+[node name="musicComponent" type="AudioStreamPlayer"]
+process_mode = 3
+stream = SubResource("AudioStreamRandomizer_18nlu")
+volume_db = -21.317
+autoplay = true
+bus = &"music"
+script = ExtResource("3_ws6wn")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

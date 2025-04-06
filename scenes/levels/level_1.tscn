@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://bjq1qgbgdocbu"]
+[gd_scene load_steps=16 format=4 uid="uid://bjq1qgbgdocbu"]
 
 [ext_resource type="Script" uid="uid://dag7j7bv3kack" path="res://scenes/levels/level_1.gd" id="1_iav0o"]
 [ext_resource type="TileSet" uid="uid://bv22lfvipjil6" path="res://tileSets/game_tile_set.tres" id="1_kolrv"]
@@ -10,6 +10,8 @@
 [ext_resource type="Script" uid="uid://co8l4cnysufd8" path="res://scenes/components/crops_cursor_component.gd" id="6_jyesy"]
 [ext_resource type="PackedScene" uid="uid://cr6abx2gpqgyn" path="res://scenes/objects/chest.tscn" id="8_s8va5"]
 [ext_resource type="PackedScene" uid="uid://dim7q467od071" path="res://scenes/objects/plants/wheat_harvest.tscn" id="9_dga24"]
+[ext_resource type="AudioStream" uid="uid://b3e0y7k1a85ra" path="res://sfx/cc0/chicken/43382__agfx__rooster-chicken-calls_2.wav" id="11_iav0o"]
+[ext_resource type="AudioStream" uid="uid://0xxdrt40uynb" path="res://sfx/cc0/chicken/316920__rudmer_rotteveel__chicken-single-alarm-call.wav" id="12_dnkej"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_7xc00"]
 vertices = PackedVector2Array(664.703, 402.594, 616.859, 404.578, 615.867, 327, 602, 310.93, 727, 310.063, 727, 436.117, 602, 327, 665.711, 436.867)
@@ -20,6 +22,11 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(737, 300, 592, 301, 592
 vertices = PackedVector2Array(700.594, 394.789, 702.594, 445.898, 610.891, 445.078, 609.109, 285, 702, 285, 702, 319.32, 734, 318.32, 734, 383, 752, 395.789, 752, 383)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(0, 3, 4, 5), PackedInt32Array(5, 6, 7, 0), PackedInt32Array(8, 0, 7, 9)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(762, 373, 744, 373, 744, 308, 712, 309, 712, 275, 599, 275, 601, 455, 713, 456, 711, 405, 762, 406)])
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_mm8aj"]
+streams_count = 2
+stream_0/stream = ExtResource("11_iav0o")
+stream_1/stream = ExtResource("12_dnkej")
 
 [node name="Level1" type="Node2D"]
 y_sort_enabled = true
@@ -124,26 +131,33 @@ position = Vector2(709, 376)
 [node name="chest" parent="." instance=ExtResource("8_s8va5")]
 position = Vector2(454, 248)
 
+[node name="anotherDayAudio" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_mm8aj")
+bus = &"SFX"
+
 [node name="WheatHarvest" parent="." instance=ExtResource("9_dga24")]
-position = Vector2(403, 245)
+position = Vector2(373, 197)
 
 [node name="WheatHarvest2" parent="." instance=ExtResource("9_dga24")]
-position = Vector2(405, 255)
+position = Vector2(382, 210)
 
 [node name="WheatHarvest3" parent="." instance=ExtResource("9_dga24")]
-position = Vector2(406, 254)
+position = Vector2(353, 186)
 
 [node name="WheatHarvest4" parent="." instance=ExtResource("9_dga24")]
-position = Vector2(404, 263)
+position = Vector2(357, 160)
 
 [node name="WheatHarvest5" parent="." instance=ExtResource("9_dga24")]
-position = Vector2(406, 264)
+position = Vector2(414, 206)
 
 [node name="WheatHarvest6" parent="." instance=ExtResource("9_dga24")]
-position = Vector2(405, 260)
+position = Vector2(407, 189)
 
 [node name="WheatHarvest7" parent="." instance=ExtResource("9_dga24")]
-position = Vector2(408, 257)
+position = Vector2(398, 201)
 
 [node name="WheatHarvest8" parent="." instance=ExtResource("9_dga24")]
-position = Vector2(412, 258)
+position = Vector2(392, 212)
+
+[node name="WheatHarvest9" parent="." instance=ExtResource("9_dga24")]
+position = Vector2(389, 200)

@@ -1,14 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://bfsbobqoansaw"]
+[gd_scene load_steps=6 format=3 uid="uid://bfsbobqoansaw"]
 
 [ext_resource type="PackedScene" uid="uid://q0chvlgo0nsh" path="res://scenes/test/GameMenuScreenBackground.tscn" id="1_60hll"]
 [ext_resource type="Script" uid="uid://bku5lx70nldp5" path="res://scenes/ui/game_menu_screen.gd" id="1_hi2d0"]
 [ext_resource type="Theme" uid="uid://cvevndji4t07j" path="res://scenes/ui/game_ui_theme.tres" id="1_t5emp"]
+[ext_resource type="PackedScene" uid="uid://bdurlw7ukqauk" path="res://scenes/components/music_component.tscn" id="2_jk4o3"]
 
 [sub_resource type="SystemFont" id="SystemFont_y4eyr"]
 subpixel_positioning = 0
 
 [node name="GameMenuScreen" type="CanvasLayer"]
 script = ExtResource("1_hi2d0")
+
+[node name="musicComponent" parent="." instance=ExtResource("2_jk4o3")]
 
 [node name="GameMenuScreenBackground" parent="." instance=ExtResource("1_60hll")]
 
@@ -50,6 +53,11 @@ layout_mode = 2
 theme_type_variation = &"GameMenuButton"
 text = "START"
 
+[node name="creditButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"GameMenuButton"
+text = "Credit"
+
 [node name="ExitGameButton" type="Button" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 29)
 layout_mode = 2
@@ -57,4 +65,5 @@ theme_type_variation = &"GameMenuButton"
 text = "EXIT"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/creditButton" to="." method="_on_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ExitGameButton" to="." method="_on_exit_game_button_pressed"]

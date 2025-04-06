@@ -3,6 +3,7 @@ extends NodeState
 @export var player: Player
 @export var animated_sprite_2d: AnimatedSprite2D
 @export var hit_component_collision_shape: CollisionShape2D
+@onready var audio_stream_player: AudioStreamPlayer = $"../../AudioStreamPlayer"
 
 func _ready() -> void:
 	hit_component_collision_shape.disabled = true
@@ -38,9 +39,8 @@ func _on_enter() -> void:
 		animated_sprite_2d.play("watering_front")
 		hit_component_collision_shape.position = Vector2(0, 3)#distance from front plant
 		
+	audio_stream_player.play()
 	hit_component_collision_shape.disabled = false
-
-	
 
 func _on_exit() -> void:
 	animated_sprite_2d.stop()

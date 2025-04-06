@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b4bqlw3pudxg3"]
+[gd_scene load_steps=9 format=3 uid="uid://b4bqlw3pudxg3"]
 
 [ext_resource type="Script" uid="uid://c16qgny5fssdo" path="res://scenes/objects/plants/wheat.gd" id="1_iuffh"]
 [ext_resource type="Texture2D" uid="uid://bhntucgr6ee15" path="res://assets/game/Objects/Basic_Plants.png" id="1_mkyvc"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://fqhvu2ybf8my" path="res://scenes/objects/plants/flowering_particles.tscn" id="3_4a6si"]
 [ext_resource type="PackedScene" uid="uid://b1uxds4w7ll6w" path="res://scenes/objects/plants/watering_particles.tscn" id="3_7kudr"]
 [ext_resource type="PackedScene" uid="uid://ckr6fx0lget8c" path="res://scenes/objects/plants/growth_cycle_component.tscn" id="5_qv4ai"]
+[ext_resource type="AudioStream" uid="uid://bjw5fmf3t7yq5" path="res://sfx/cc0/edited - 518799__mateusz_chenc__shaken-bush.wav" id="7_ye42y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fuldb"]
 size = Vector2(14, 8)
@@ -35,3 +36,9 @@ tool = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
 position = Vector2(-1, 3)
 shape = SubResource("RectangleShape2D_fuldb")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ye42y")
+volume_db = -18.703
+autoplay = true
+bus = &"SFX"

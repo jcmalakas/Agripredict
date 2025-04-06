@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://h4q34ttqrgwx"]
+[gd_scene load_steps=6 format=3 uid="uid://h4q34ttqrgwx"]
 
 [ext_resource type="PackedScene" uid="uid://cubk2my5b7na1" path="res://scenes/components/day_night_cycle_component.tscn" id="1_6y6de"]
 [ext_resource type="PackedScene" uid="uid://bjq1qgbgdocbu" path="res://scenes/levels/level_1.tscn" id="2_5tgxb"]
 [ext_resource type="PackedScene" uid="uid://du5lrbo1q403s" path="res://scenes/ui/game_screen.tscn" id="3_2xs5o"]
 [ext_resource type="PackedScene" uid="uid://tquwk0xon4o3" path="res://scenes/character/player/player.tscn" id="3_sa2xo"]
+[ext_resource type="PackedScene" uid="uid://bdurlw7ukqauk" path="res://scenes/components/music_component.tscn" id="5_gubc5"]
 
 [node name="MainScene" type="Node"]
 
@@ -28,5 +29,7 @@ limit_bottom = 480
 editor_draw_limits = true
 
 [node name="GameScreen" parent="." instance=ExtResource("3_2xs5o")]
+
+[node name="musicComponent" parent="." instance=ExtResource("5_gubc5")]
 
 [editable path="GameRoot/player"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dim7q467od071"]
+[gd_scene load_steps=5 format=3 uid="uid://dim7q467od071"]
 
 [ext_resource type="Texture2D" uid="uid://bhntucgr6ee15" path="res://assets/game/Objects/Basic_Plants.png" id="1_icyl4"]
 [ext_resource type="PackedScene" uid="uid://4ei2iocu35b2" path="res://scenes/components/collectable_component.tscn" id="2_hxbay"]
+[ext_resource type="AudioStream" uid="uid://bjw5fmf3t7yq5" path="res://sfx/cc0/edited - 518799__mateusz_chenc__shaken-bush.wav" id="3_of7pp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mbcoh"]
-radius = 9.0
+radius = 14.0
 
 [node name="WheatHarvest" type="Sprite2D"]
 y_sort_enabled = true
@@ -18,3 +19,8 @@ collectable_name = "wheat"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
 shape = SubResource("CircleShape2D_mbcoh")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_of7pp")
+volume_db = -18.703
+bus = &"SFX"

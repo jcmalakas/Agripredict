@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://covly624mcdqw"]
+
+[ext_resource type="Script" uid="uid://dqfc61600ltv8" path="res://scenes/components/rainComponent.gd" id="1_plrwy"]
+[ext_resource type="AudioStream" uid="uid://bo2xv17w4suyt" path="res://sfx/cc0/rain/518863__idomusics__rain.wav" id="2_me8eg"]
+[ext_resource type="AudioStream" uid="uid://cx6oa2iauu427" path="res://sfx/cc0/rain/396484__macdaddyno1__big-rain-drops-1.mp3" id="3_0cixb"]
+[ext_resource type="AudioStream" uid="uid://bgllel6f2g53" path="res://sfx/cc0/rain/thunderstorm/237729__flathill__rain-and-thunder-4.wav" id="4_t11os"]
+[ext_resource type="AudioStream" uid="uid://d2yjlasd6gvno" path="res://sfx/cc0/rain/thunderstorm/244053__lennyboy__thunder.ogg" id="5_ymvsd"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_85cuo"]
+streams_count = 2
+stream_0/stream = ExtResource("4_t11os")
+stream_1/stream = ExtResource("5_ymvsd")
+
+[node name="rainComponent" type="Node2D"]
+script = ExtResource("1_plrwy")
+
+[node name="noDamageAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_me8eg")
+bus = &"SFX"
+
+[node name="mildAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_0cixb")
+bus = &"SFX"
+
+[node name="stormAudio" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_85cuo")
+bus = &"SFX"

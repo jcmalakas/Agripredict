@@ -1,0 +1,199 @@
+[gd_scene load_steps=3 format=3 uid="uid://io21yfx7t78s"]
+
+[ext_resource type="Script" uid="uid://cb142vh623wql" path="res://scenes/ui/credit.gd" id="1_ibn4e"]
+[ext_resource type="Theme" uid="uid://cvevndji4t07j" path="res://scenes/ui/game_ui_theme.tres" id="1_rjnpu"]
+
+[node name="Credit" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_ibn4e")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.0
+offset_top = -122.0
+offset_right = 232.0
+offset_bottom = 122.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_rjnpu")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(410, 132)
+layout_mode = 2
+theme = ExtResource("1_rjnpu")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="team" type="VBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer3/team"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer3/team/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 25
+text = "Team"
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer3/team"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer3/team/HBoxContainer2"]
+layout_mode = 2
+theme_type_variation = &"pcz1"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer3/team/HBoxContainer2/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer3/team/HBoxContainer2/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer3/team/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+text = "developer"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer3/team/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+text = "> Suarez Crispatrick
+> Sandaga Kristian
+> Saracanlao Justine"
+
+[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer3/team/HBoxContainer2"]
+layout_mode = 2
+theme_type_variation = &"pcz1"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer3/team/HBoxContainer2/PanelContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer3/team/HBoxContainer2/PanelContainer2/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer3/team/HBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "documentation"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer3/team/HBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "> Rivera Czarlayne
+> Bonto Gweneth"
+
+[node name="credit" type="VBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer3/credit"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer3/credit/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 25
+text = "Credit"
+horizontal_alignment = 1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer3/credit"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 30
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer3/credit/HBoxContainer4"]
+layout_mode = 2
+theme_type_variation = &"pcz1"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer3/credit/HBoxContainer4/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer3/credit/HBoxContainer4/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer3/credit/HBoxContainer4/PanelContainer/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer3/credit/HBoxContainer4/PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "art asset"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer3/credit/HBoxContainer4/PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Cup Nooble - https://cupnooble.itch.io/"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer3/credit/HBoxContainer4/PanelContainer/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label2" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer3/credit/HBoxContainer4/PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+text = "Music/SFX"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer3/credit/HBoxContainer4/PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Label3" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer3/credit/HBoxContainer4/PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "> Groovy Guitar - LOOP.wav by joshuaempyre -- https://freesound.org/s/250749/ -- License: Attribution 4.0"
+autowrap_mode = 3
+
+[node name="Label4" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer3/credit/HBoxContainer4/PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "> Chill Guitar with Drums - LOOP.wav by joshuaempyre -- https://freesound.org/s/250750/ -- License: Attribution 4.0"
+autowrap_mode = 3
+
+[node name="Label5" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer3/credit/HBoxContainer4/PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "> 320655__rhodesmas__level-up-01.mp3 by shinephoenixstormcrow -- https://freesound.org/s/337049/ -- License: Attribution 3.0"
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_rjnpu")
+text = "return"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

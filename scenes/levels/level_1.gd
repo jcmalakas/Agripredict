@@ -1,11 +1,16 @@
 extends Node2D
 
 @onready var LRCanvasLayer:PackedScene = preload("res://scenes/ui/linearRegressionCanvasLayer.tscn")
+@onready var audioDayPassed = $anotherDayAudio
 #var test = 0
 #
 #
 func _ready() -> void:
 	DayAndNightCycleManager.weekPassed.connect(showLinearRegression)
+	DayAndNightCycleManager.dayPassed.connect(playDayPassedAudio)
+
+func playDayPassedAudio():
+	audioDayPassed.play()
 
 func showLinearRegression():
 	if not WeeklyReport.dataFinalized:

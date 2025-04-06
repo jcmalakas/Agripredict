@@ -9,6 +9,8 @@ var wheat_harvest_scene = preload("res://scenes/objects/plants/wheat_harvest.tsc
 @onready var growth_cycle_component: GrowthCycleComponent = $GrowthCycleComponent
 @onready var hurt_component: HurtComponent = $HurtComponent
 
+
+
 var growth_state: DataTypes.GrowthStates = DataTypes.GrowthStates.Seed 
 #the higher the threshold, the less likely it would get destroyed
 @export var destroyThreshold:int = 80
