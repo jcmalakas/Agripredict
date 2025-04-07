@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://tquwk0xon4o3"]
+[gd_scene load_steps=75 format=3 uid="uid://tquwk0xon4o3"]
 
 [ext_resource type="Script" uid="uid://t0jo0cd3hno3" path="res://scenes/character/player/player.gd" id="1_jwjvm"]
 [ext_resource type="Texture2D" uid="uid://dybwn221yh3ck" path="res://assets/game/Characters/Basic Charakter Actions.png" id="1_xpw0x"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cv0act588crt0" path="res://assets/game/Characters/Sprite-Farmer_Idle2.png" id="4_qkn36"]
 [ext_resource type="Texture2D" uid="uid://bjfmmicel8soj" path="res://assets/game/Characters/Sprite-Farmer_Actions.png" id="4_yuskr"]
 [ext_resource type="Script" uid="uid://d205qvy40xu3m" path="res://scenes/character/player/walk_state.gd" id="5_mhafc"]
-[ext_resource type="Texture2D" uid="uid://cwv1psnt31awy" path="res://assets/game/Characters/Sprite-Farmer-NewVersion.png" id="7_aesnc"]
+[ext_resource type="Texture2D" uid="uid://2ofi4nshi8mo" path="res://assets/game/Characters/Sprite-Farmer-walk_left_walk_right.png" id="7_aesnc"]
 [ext_resource type="Script" uid="uid://b7rsavny3ajki" path="res://scenes/character/player/chopping_state.gd" id="7_tcoks"]
 [ext_resource type="Script" uid="uid://c82dss3fcdsf1" path="res://scenes/character/player/tilling_state.gd" id="8_g5y4b"]
 [ext_resource type="Script" uid="uid://d6umo06jgb4b" path="res://scenes/character/player/watering_state.gd" id="9_h8x2x"]
@@ -151,17 +151,25 @@ region = Rect2(144, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_688uq"]
 atlas = ExtResource("7_aesnc")
-region = Rect2(96, 96, 48, 48)
+region = Rect2(48, 96, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xy3g3"]
 atlas = ExtResource("7_aesnc")
-region = Rect2(144, 96, 48, 48)
+region = Rect2(96, 96, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_waret"]
 atlas = ExtResource("7_aesnc")
-region = Rect2(96, 144, 48, 48)
+region = Rect2(144, 96, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1vpgm"]
+atlas = ExtResource("7_aesnc")
+region = Rect2(48, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7utyo"]
+atlas = ExtResource("7_aesnc")
+region = Rect2(96, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3kqy"]
 atlas = ExtResource("7_aesnc")
 region = Rect2(144, 144, 48, 48)
 
@@ -374,21 +382,27 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xy3g3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_waret")
 }],
 "loop": true,
 "name": &"walk_left",
-"speed": 3.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_waret")
+"texture": SubResource("AtlasTexture_1vpgm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1vpgm")
+"texture": SubResource("AtlasTexture_7utyo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3kqy")
 }],
 "loop": true,
 "name": &"walk_right",
-"speed": 3.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -488,8 +502,9 @@ script = ExtResource("1_jwjvm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ayw1x")
-animation = &"idle_front"
+animation = &"walk_right"
 autoplay = "idle_front"
+frame_progress = 0.667376
 offset = Vector2(0, -5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
