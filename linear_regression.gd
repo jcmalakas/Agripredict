@@ -42,7 +42,7 @@ func _process(delta: float) -> void:
 	profits.text = str(totalProfit)
 	
 	var currentlyPlantedProfit = WeeklyReport.currentlyPlanted * WeeklyReport.profitPerHarvest
-	totalPredictedProfit.text = str((currentlyPlantedProfit + totalProfit) - (losses + WeeklyReport.debt))
+	totalPredictedProfit.text = str((currentlyPlantedProfit + InventoryManager.totalMoney) - (losses + WeeklyReport.debt))
 
 func _ready() -> void:
 	

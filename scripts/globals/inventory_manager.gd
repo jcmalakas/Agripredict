@@ -4,6 +4,10 @@ extends Node
 var inventory: Dictionary = {"wheat" : 0}
 var money:int = 0
 
+#spended and currently have
+var totalMoney = 0
+
+
 signal inventory_changed
 
 var riceCount:int = 10

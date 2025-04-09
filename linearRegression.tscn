@@ -134,7 +134,7 @@ text = "Debt:"
 
 [node name="Total" type="Label" parent="PanelContainer/MarginContainer/PanelContainer/MarginContainer2/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Labels"]
 layout_mode = 2
-text = "Predicted profit:"
+text = "Month's profit:"
 
 [node name="Datas" type="VBoxContainer" parent="PanelContainer/MarginContainer/PanelContainer/MarginContainer2/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2

@@ -15,6 +15,7 @@ func _physics_process(delta: float) -> void:
 		if InventoryManager.inventory["wheat"] != 0:
 			audio_stream_player.play()
 			InventoryManager.money = InventoryManager.money + (InventoryManager.inventory["wheat"] * riceMultiplier)
+			InventoryManager.totalMoney = InventoryManager.totalMoney + InventoryManager.money
 			InventoryManager.inventory["wheat"] = 0
 			InventoryManager.inventory_changed.emit()
 			print("Money is: ")
