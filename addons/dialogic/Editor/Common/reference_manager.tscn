@@ -1,10 +1,10 @@
 [gd_scene load_steps=13 format=3 uid="uid://c7lmt5cp7bxcm"]
 
-[ext_resource type="Script" uid="uid://b56i1o8pgpkgf" path="res://addons/dialogic/Editor/Common/reference_manager.gd" id="1_3t531"]
-[ext_resource type="Script" uid="uid://6m44p8wi1jqd" path="res://addons/dialogic/Editor/Common/broken_reference_manager.gd" id="1_agmg4"]
-[ext_resource type="Script" uid="uid://l7mbpag4gxxt" path="res://addons/dialogic/Editor/Common/ReferenceManager_AddReplacementPanel.gd" id="2_tt4jd"]
+[ext_resource type="Script" uid="uid://dp8uqj803dgw7" path="res://addons/dialogic/Editor/Common/reference_manager.gd" id="1_3t531"]
+[ext_resource type="Script" uid="uid://b3nt4c1yur0ju" path="res://addons/dialogic/Editor/Common/broken_reference_manager.gd" id="1_agmg4"]
+[ext_resource type="Script" uid="uid://d2cwmfaxhueyf" path="res://addons/dialogic/Editor/Common/ReferenceManager_AddReplacementPanel.gd" id="2_tt4jd"]
 [ext_resource type="PackedScene" uid="uid://dpwhshre1n4t6" path="res://addons/dialogic/Editor/Events/Fields/field_options_dynamic.tscn" id="3_yomsc"]
-[ext_resource type="Script" uid="uid://d2ioly3v1iqtl" path="res://addons/dialogic/Editor/Common/unique_identifiers_manager.gd" id="5_wnvbq"]
+[ext_resource type="Script" uid="uid://b66qk4tnb0ipn" path="res://addons/dialogic/Editor/Common/unique_identifiers_manager.gd" id="5_wnvbq"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_l6uiy"]
 

@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://d0pgqda7dy18d"]
+
+[ext_resource type="Texture2D" uid="uid://cndb11t5sgrb5" path="res://assets/game/Characters/Sprite-Merchant_Idle.png" id="1_a2q4x"]
+[ext_resource type="Script" uid="uid://b2ca3lsfmxb00" path="res://scenes/character/merchant.gd" id="1_fhd8a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fhd8a"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6qbgt"]
+radius = 19.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcyso"]
+atlas = ExtResource("1_a2q4x")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2pydc"]
+atlas = ExtResource("1_a2q4x")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ms1vl"]
+atlas = ExtResource("1_a2q4x")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivtue"]
+atlas = ExtResource("1_a2q4x")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_my6ls"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcyso")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2pydc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ms1vl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivtue")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Merchant" type="StaticBody2D"]
+script = ExtResource("1_fhd8a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fhd8a")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_6qbgt")
+debug_color = Color(0.641926, 0.494826, 0, 0.42)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_my6ls")
+frame = 1
+frame_progress = 0.324901
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

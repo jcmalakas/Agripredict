@@ -86,4 +86,7 @@ var dataFinalized:bool = false
 var justRained:bool = false
 
 
-var profitPerHarvest:int = 40
+var profitPerHarvest:int = 50
+var debt:int = 500
+
+#current money + wheat + total currently planted

@@ -124,6 +124,7 @@ position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_5vikd")
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = 1.0
 offset_top = -17.0
 offset_right = 145.0
@@ -133,6 +134,7 @@ text = "Press E to sell "
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_acra8")
+bus = &"SFX"
 
 [node name="chestOpenAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_pev8c")

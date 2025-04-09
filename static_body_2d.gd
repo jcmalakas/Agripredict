@@ -2,10 +2,11 @@ extends StaticBody2D
 
 var inside:bool = false
 @onready var hint:Label = $Label
-@export var riceMultiplier:float = 40
+var riceMultiplier:int = WeeklyReport.profitPerHarvest
 @onready var animation:AnimatedSprite2D = $AnimatedSprite2D
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var chest_open_audio: AudioStreamPlayer2D = $chestOpenAudio
+
 
 
 func _physics_process(delta: float) -> void:

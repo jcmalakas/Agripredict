@@ -3,12 +3,23 @@ extends NodeState
 @export var player: Player
 @export var animated_sprite_2d: AnimatedSprite2D
 
+var canMove:bool = false
+
+func _ready() -> void:
+	Dialogic.signal_event.connect(dialogicSignals)
+	
+func dialogicSignals(argument:String):
+	if argument == "canMove":
+		print("Dialogue signal")
+		canMove = not canMove
 
 func _on_process(_delta : float) -> void:
 	pass
 
 #idle player animation
 func _on_physics_process(_delta : float) -> void:	
+
+	
 	if player.player_direction == Vector2.UP:
 		animated_sprite_2d.play("idle_back")
 	elif player.player_direction == Vector2.RIGHT:
@@ -27,6 +38,8 @@ func _on_next_transitions() -> void:
 	
 #transition to walk
 	if GameInputEvents.is_movement_input():
+		if not canMove:
+			return
 		transition.emit("Walk")
 #end of transition
 

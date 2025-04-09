@@ -1,0 +1,25 @@
+Tatang: ZZzz....
+Tatang: Zzz
+Tatang: Cough!! cough!
+Tatang: *Breathe in*
+Tatang: ...
+[signal arg="canMove"]
+[end_timeline]
+label merchant
+[signal arg="canMove"]
+merchant: Nice morning, Tatang
+merchant: I'm sure you know why I'm here
+merchant: Your loan
+merchant: I'ts due this month
+merchant: Surely you remember how much it is monthly?
+merchant: Well...
+merchant: Who am I kidding?
+merchant: I'ts 500 peso per month Tatang!
+merchant: Do you hear!??
+merchant: 500!!
+Tatang: *Growl*
+Tatang: I hear you
+merchant: Well then
+merchant: I'll be taking my leave
+[signal arg="canMove"]
+[signal arg="merchant leaves"]

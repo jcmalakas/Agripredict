@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://bjq1qgbgdocbu"]
+[gd_scene load_steps=16 format=4 uid="uid://bjq1qgbgdocbu"]
 
 [ext_resource type="Script" uid="uid://dag7j7bv3kack" path="res://scenes/levels/level_1.gd" id="1_iav0o"]
 [ext_resource type="TileSet" uid="uid://bv22lfvipjil6" path="res://tileSets/game_tile_set.tres" id="1_kolrv"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cr6abx2gpqgyn" path="res://scenes/objects/chest.tscn" id="8_s8va5"]
 [ext_resource type="AudioStream" uid="uid://b3e0y7k1a85ra" path="res://sfx/cc0/chicken/43382__agfx__rooster-chicken-calls_2.wav" id="11_iav0o"]
 [ext_resource type="AudioStream" uid="uid://0xxdrt40uynb" path="res://sfx/cc0/chicken/316920__rudmer_rotteveel__chicken-single-alarm-call.wav" id="12_dnkej"]
+[ext_resource type="PackedScene" uid="uid://d0pgqda7dy18d" path="res://scenes/character/merchant.tscn" id="12_iav0o"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_7xc00"]
 vertices = PackedVector2Array(619, 310.922, 727, 310.07, 727, 436.117, 664.711, 403, 619, 403, 665.703, 436.867)
@@ -133,3 +134,6 @@ position = Vector2(454, 248)
 [node name="anotherDayAudio" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_mm8aj")
 bus = &"SFX"
+
+[node name="Merchant" parent="." instance=ExtResource("12_iav0o")]
+position = Vector2(400, 241)

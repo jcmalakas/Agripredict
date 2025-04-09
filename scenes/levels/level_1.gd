@@ -8,7 +8,9 @@ extends Node2D
 func _ready() -> void:
 	DayAndNightCycleManager.weekPassed.connect(showLinearRegression)
 	DayAndNightCycleManager.dayPassed.connect(playDayPassedAudio)
-
+	
+	
+	Dialogic.start("timeline")
 func playDayPassedAudio():
 	audioDayPassed.play()
 

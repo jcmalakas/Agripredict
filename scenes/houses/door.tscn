@@ -112,6 +112,8 @@ debug_color = Color(0.28651, 0.617789, 0.365841, 0.42)
 
 [node name="doorOpenAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_nno8d")
+bus = &"SFX"
 
 [node name="doorCloseAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_wapg7")
+bus = &"SFX"

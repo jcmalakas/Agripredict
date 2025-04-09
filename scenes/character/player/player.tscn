@@ -572,6 +572,7 @@ shape = SubResource("CircleShape2D_68dt2")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_m5h5h")
+bus = &"SFX"
 
 [node name="bubbleChat" type="Marker2D" parent="."]
 position = Vector2(9, -14)

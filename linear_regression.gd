@@ -7,6 +7,7 @@ extends Control
 @onready var rainfalls:Label = $PanelContainer/MarginContainer/PanelContainer/MarginContainer2/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Datas/rainfalls
 @onready var cropLoss:Label =  $PanelContainer/MarginContainer/PanelContainer/MarginContainer2/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Datas/cropLoss
 @onready var profits:Label = $PanelContainer/MarginContainer/PanelContainer/MarginContainer2/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Datas/profits
+@onready var totalPredictedProfit: Label = $PanelContainer/MarginContainer/PanelContainer/MarginContainer2/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Datas/total
 
 #this is the Y values
 	#var tips: Array = [5, 17, 11, 8, 14, 5]
@@ -33,9 +34,15 @@ func _process(delta: float) -> void:
 	for num in WeeklyReport.cropLosses:
 		total += num
 	cropLoss.text = str(total) 
-	lossProfit.text = str(total * WeeklyReport.profitPerHarvest)
-	profits.text = str((WeeklyReport.currentlyPlanted + InventoryManager.inventory["wheat"]) * WeeklyReport.profitPerHarvest)
 	
+	var losses = total * WeeklyReport.profitPerHarvest
+	lossProfit.text = str(losses)
+	
+	var totalProfit = ((WeeklyReport.currentlyPlanted + InventoryManager.inventory["wheat"]) * WeeklyReport.profitPerHarvest) + InventoryManager.money
+	profits.text = str(totalProfit)
+	
+	var currentlyPlantedProfit = WeeklyReport.currentlyPlanted * WeeklyReport.profitPerHarvest
+	totalPredictedProfit.text = str((currentlyPlantedProfit + totalProfit) - (losses + WeeklyReport.debt))
 
 func _ready() -> void:
 	
