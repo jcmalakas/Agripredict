@@ -126,7 +126,7 @@ text = "Crop Loss:"
 
 [node name="Profit" type="Label" parent="PanelContainer/MarginContainer/PanelContainer/MarginContainer2/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Labels"]
 layout_mode = 2
-text = "Base Profit:"
+text = "Profit:"
 
 [node name="Debt" type="Label" parent="PanelContainer/MarginContainer/PanelContainer/MarginContainer2/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Labels"]
 layout_mode = 2
@@ -134,7 +134,7 @@ text = "Debt:"
 
 [node name="Total" type="Label" parent="PanelContainer/MarginContainer/PanelContainer/MarginContainer2/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Labels"]
 layout_mode = 2
-text = "Month's profit:"
+text = "Current Money:"
 
 [node name="Datas" type="VBoxContainer" parent="PanelContainer/MarginContainer/PanelContainer/MarginContainer2/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2

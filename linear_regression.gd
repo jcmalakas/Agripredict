@@ -42,7 +42,11 @@ func _process(delta: float) -> void:
 	profits.text = str(totalProfit)
 	
 	var currentlyPlantedProfit = WeeklyReport.currentlyPlanted * WeeklyReport.profitPerHarvest
-	totalPredictedProfit.text = str((currentlyPlantedProfit + InventoryManager.totalMoney) - (losses + WeeklyReport.debt))
+	#totalPredictedProfit.text = str((currentlyPlantedProfit + InventoryManager.totalMoney) - (losses + WeeklyReport.debt))
+	
+
+	
+	totalPredictedProfit.text = str(InventoryManager.money - WeeklyReport.debt)
 	print()
 
 func _ready() -> void:
@@ -181,6 +185,22 @@ func _on_button_pressed() -> void:
 	#WeeklyReport.rainCount = 0
 	
 	#WeeklyReport.shown = true
+	
+	
+
+	WeeklyReport.rainStrenghts.clear()
+	WeeklyReport.rainCount = 0
+
+	WeeklyReport.cropLoss = 0
+	WeeklyReport.cropLosses.clear()
+	
+	WeeklyReport.cropLosses.append(0)
+	WeeklyReport.rainStrenghts.append(0)
+	
+	InventoryManager.money =  InventoryManager.money - WeeklyReport.debt
+	
+	#DayAndNightCycleManager.current_day = 1
+
 	WeeklyReport.dataFinalized = false
 	get_tree().paused = false
 	get_parent().queue_free()
