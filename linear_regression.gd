@@ -186,7 +186,8 @@ func _on_button_pressed() -> void:
 	
 	#WeeklyReport.shown = true
 	
-	
+	if InventoryManager.money <= 0:
+		get_tree().quit()
 
 	WeeklyReport.rainStrenghts.clear()
 	WeeklyReport.rainCount = 0
